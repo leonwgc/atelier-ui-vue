@@ -1,0 +1,3 @@
+.at-watermark { position: relative; min-height: 1px; }
+.at-watermark__mark { position: absolute; inset: 0; background-repeat: repeat; pointer-events: none; }
+.at-watermark--fullscreen > .at-watermark__mark { position: fixed; }

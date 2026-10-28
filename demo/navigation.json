@@ -1,0 +1,684 @@
+[
+  {
+    "id": "overview",
+    "title": "组件总览",
+    "icon": "◫",
+    "group": "开始使用"
+  },
+  {
+    "id": "form",
+    "title": "Form Hooks",
+    "icon": "⌘",
+    "group": "数据录入"
+  },
+  {
+    "id": "datePicker",
+    "title": "DatePicker 日期选择",
+    "icon": "▦",
+    "group": "数据录入"
+  },
+  {
+    "id": "upload",
+    "title": "Upload 上传",
+    "icon": "↑",
+    "group": "数据录入"
+  },
+  {
+    "id": "buttons",
+    "title": "Button 按钮",
+    "icon": "◉",
+    "group": "基础组件"
+  },
+  {
+    "id": "card",
+    "title": "Card 卡片",
+    "icon": "▢",
+    "group": "基础组件"
+  },
+  {
+    "id": "inputs",
+    "title": "Input 输入",
+    "icon": "▤",
+    "group": "数据录入"
+  },
+  {
+    "id": "selection",
+    "title": "选择组件",
+    "icon": "☑",
+    "group": "数据录入"
+  },
+  {
+    "id": "select",
+    "title": "Select 选择器",
+    "icon": "⌄",
+    "group": "数据录入",
+    "badge": "Select",
+    "description": "自绘的下拉选择器，支持搜索、多选、分组、自定义选项与弹层内容。"
+  },
+  {
+    "id": "autoComplete",
+    "title": "AutoComplete 自动完成",
+    "icon": "⌕",
+    "group": "数据录入",
+    "badge": "AutoComplete",
+    "description": "输入时提供匹配建议，弹层完全自绘，可自由定制风格与内容。"
+  },
+  {
+    "id": "inputNumber",
+    "title": "InputNumber 数字输入框",
+    "icon": "#",
+    "group": "数据录入",
+    "badge": "InputNumber",
+    "description": "按范围、步长与精度录入数值，支持长按步进、键盘调节与格式化显示。"
+  },
+  {
+    "id": "rate",
+    "title": "Rate 评分",
+    "icon": "★",
+    "group": "数据录入",
+    "badge": "Rate",
+    "description": "以星级收集评分，支持半星、文案提示、自定义字符与键盘操作。"
+  },
+  {
+    "id": "slider",
+    "title": "Slider 滑动输入条",
+    "icon": "━",
+    "group": "数据录入",
+    "badge": "Slider",
+    "description": "在数值区间内拖动取值，支持双滑块范围、刻度标记、提示气泡与键盘微调。"
+  },
+  {
+    "id": "segmented",
+    "title": "Segmented 分段控制器",
+    "icon": "◧",
+    "group": "数据录入",
+    "badge": "Segmented",
+    "description": "在少量互斥选项间切换，带平滑滑动的指示块与方向键导航。"
+  },
+  {
+    "id": "timePicker",
+    "title": "TimePicker 时间选择",
+    "icon": "◷",
+    "group": "数据录入",
+    "badge": "TimePicker",
+    "description": "通过时 / 分 / 秒滚动列选择时间，支持步长、禁用区间与“此刻”快捷操作。"
+  },
+  {
+    "id": "colorPicker",
+    "title": "ColorPicker 颜色选择器",
+    "icon": "◉",
+    "group": "数据录入",
+    "badge": "ColorPicker",
+    "description": "自绘的 HSV 取色面板，支持透明度、多种格式、预设色板与手动输入。"
+  },
+  {
+    "id": "mentions",
+    "title": "Mentions 提及",
+    "icon": "@",
+    "group": "数据录入",
+    "badge": "Mentions",
+    "description": "在多行文本中输入触发符后弹出候选成员，弹层跟随光标位置。"
+  },
+  {
+    "id": "cascader",
+    "title": "Cascader 级联选择",
+    "icon": "⋯",
+    "group": "数据录入",
+    "badge": "Cascader",
+    "description": "多列级联面板按层级选择路径，支持悬停展开、任意层级选择与路径搜索。"
+  },
+  {
+    "id": "treeSelect",
+    "title": "TreeSelect 树选择",
+    "icon": "⌥",
+    "group": "数据录入",
+    "badge": "TreeSelect",
+    "description": "以树形面板从层级数据中选择，支持搜索、单选 / 多选与级联勾选。"
+  },
+  {
+    "id": "transfer",
+    "title": "Transfer 穿梭框",
+    "icon": "⇄",
+    "group": "数据录入",
+    "badge": "Transfer",
+    "description": "在两个列表间批量移动条目，支持全选、搜索、单向模式与自定义渲染。"
+  },
+  {
+    "id": "feedback",
+    "title": "Modal 弹窗",
+    "icon": "▣",
+    "group": "反馈组件"
+  },
+  {
+    "id": "alert",
+    "title": "Alert 提示",
+    "icon": "ⓘ",
+    "group": "反馈组件"
+  },
+  {
+    "id": "tooltip",
+    "title": "Tooltip 文字提示",
+    "icon": "◉",
+    "group": "反馈组件"
+  },
+  {
+    "id": "drawer",
+    "title": "Drawer 抽屉",
+    "icon": "▣",
+    "group": "反馈组件"
+  },
+  {
+    "id": "empty",
+    "title": "Empty 空状态",
+    "icon": "◌",
+    "group": "反馈组件"
+  },
+  {
+    "id": "progress",
+    "title": "Progress 进度条",
+    "icon": "▰",
+    "group": "反馈组件"
+  },
+  {
+    "id": "spin",
+    "title": "Spin 加载中",
+    "icon": "◌",
+    "group": "反馈组件"
+  },
+  {
+    "id": "skeleton",
+    "title": "Skeleton 骨架屏",
+    "icon": "▤",
+    "group": "反馈组件"
+  },
+  {
+    "id": "breadcrumb",
+    "title": "Breadcrumb 面包屑",
+    "icon": "›",
+    "group": "导航组件"
+  },
+  {
+    "id": "tabs",
+    "title": "Tabs 标签页",
+    "icon": "▥",
+    "group": "导航组件"
+  },
+  {
+    "id": "pagination",
+    "title": "Pagination 分页",
+    "icon": "⇄",
+    "group": "导航组件"
+  },
+  {
+    "id": "steps",
+    "title": "Steps 步骤条",
+    "icon": "①",
+    "group": "导航组件"
+  },
+  {
+    "id": "table",
+    "title": "Table 表格",
+    "icon": "▦",
+    "group": "数据展示"
+  },
+  {
+    "id": "tag",
+    "title": "Tag 标签",
+    "icon": "◇",
+    "group": "数据展示"
+  },
+  {
+    "id": "avatar",
+    "title": "Avatar 头像",
+    "icon": "◌",
+    "group": "数据展示"
+  },
+  {
+    "id": "badge",
+    "title": "Badge 徽标",
+    "icon": "●",
+    "group": "数据展示"
+  },
+  {
+    "id": "descriptions",
+    "title": "Descriptions 描述列表",
+    "icon": "☷",
+    "group": "数据展示"
+  },
+  {
+    "id": "timeline",
+    "title": "Timeline 时间轴",
+    "icon": "⋮",
+    "group": "数据展示"
+  },
+  {
+    "id": "collapse",
+    "title": "Collapse 折叠面板",
+    "icon": "⌄",
+    "group": "数据展示"
+  },
+  {
+    "id": "divider",
+    "title": "Divider 分割线",
+    "icon": "―",
+    "group": "基础组件"
+  },
+  {
+    "id": "dropdown",
+    "title": "Dropdown 下拉菜单",
+    "icon": "⌄",
+    "group": "导航组件",
+    "eyebrow": "NAVIGATION",
+    "badge": "Dropdown",
+    "description": "在触发器旁展示一组操作，支持图标、快捷键提示、分组、分割线、危险项与键盘导航。"
+  },
+  {
+    "id": "menu",
+    "title": "Menu 导航菜单",
+    "icon": "☰",
+    "group": "导航组件",
+    "eyebrow": "NAVIGATION",
+    "badge": "Menu",
+    "description": "支持内嵌展开、水平与垂直弹出三种模式，可折叠为图标栏，提供深色主题与完整键盘导航。"
+  },
+  {
+    "id": "anchor",
+    "title": "Anchor 锚点",
+    "icon": "⚓",
+    "group": "导航组件",
+    "eyebrow": "NAVIGATION",
+    "badge": "Anchor",
+    "description": "页内导航：滚动时自动高亮当前区块，点击平滑定位，支持嵌套层级与水平布局。"
+  },
+  {
+    "id": "affix",
+    "title": "Affix 固钉",
+    "icon": "⌖",
+    "group": "布局组件",
+    "eyebrow": "LAYOUT",
+    "badge": "Affix",
+    "description": "当元素滚动到指定位置时将其固定，并以占位元素保持原有布局，支持自定义滚动容器。"
+  },
+  {
+    "id": "tour",
+    "title": "Tour 漫游式引导",
+    "icon": "✧",
+    "group": "反馈组件",
+    "eyebrow": "FEEDBACK",
+    "badge": "Tour",
+    "description": "聚光遮罩高亮目标元素，卡片自动定位并带箭头，支持步骤指示、键盘切换与主色风格。"
+  },
+  {
+    "id": "floatButton",
+    "title": "FloatButton 悬浮按钮",
+    "icon": "↗",
+    "group": "基础组件",
+    "eyebrow": "GENERAL",
+    "badge": "FloatButton",
+    "description": "固定在视口角落的快捷操作，支持主色与方形样式、徽标、分组展开菜单以及回到顶部。"
+  },
+  {
+    "id": "popover",
+    "title": "Popover 气泡卡片",
+    "icon": "▱",
+    "group": "反馈组件",
+    "eyebrow": "FEEDBACK",
+    "badge": "Popover",
+    "description": "在触发元素附近展示带标题的浮层，支持点击 / 悬停 / 聚焦触发、八种位置、箭头与受控模式。"
+  },
+  {
+    "id": "popconfirm",
+    "title": "Popconfirm 气泡确认框",
+    "icon": "✓",
+    "group": "反馈组件",
+    "eyebrow": "FEEDBACK",
+    "badge": "Popconfirm",
+    "description": "就地请求确认，支持异步确认（自动 loading）、失败提示、危险操作样式与自定义文案。"
+  },
+  {
+    "id": "typography",
+    "title": "Typography 排版",
+    "icon": "T",
+    "group": "基础组件",
+    "eyebrow": "GENERAL",
+    "badge": "Typography",
+    "description": "标题、段落、文本与链接的统一排版，支持复制、编辑、省略展开与多种语义样式。"
+  },
+  {
+    "id": "statistic",
+    "title": "Statistic 统计数值",
+    "icon": "↗",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Statistic",
+    "description": "突出展示关键指标，支持千分位、精度、前后缀、趋势标识、加载骨架以及倒计时。"
+  },
+  {
+    "id": "image",
+    "title": "Image 图片",
+    "icon": "▧",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Image",
+    "description": "带骨架占位、失败回退与全屏预览的图片组件，预览支持缩放、旋转、翻转、拖拽与相册切换。"
+  },
+  {
+    "id": "carousel",
+    "title": "Carousel 走马灯",
+    "icon": "▭",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Carousel",
+    "description": "滑动 / 淡入两种切换效果，支持自动播放（悬停暂停）、拖拽、箭头、指示点位置与命令式控制。"
+  },
+  {
+    "id": "calendar",
+    "title": "Calendar 日历",
+    "icon": "▦",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Calendar",
+    "description": "月 / 年两种面板，支持全屏日程单元格、紧凑卡片、禁用日期、有效范围与完整键盘导航。"
+  },
+  {
+    "id": "tree",
+    "title": "Tree 树形控件",
+    "icon": "⋮",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Tree",
+    "description": "层级数据的展开、选择与级联勾选，支持连线、图标、搜索高亮、异步加载与键盘导航。"
+  },
+  {
+    "id": "list",
+    "title": "List 列表",
+    "icon": "☰",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "List",
+    "description": "通用列表容器：头尾、分割线、尺寸、加载骨架、分页、栅格布局与空状态。"
+  },
+  {
+    "id": "listy",
+    "title": "Listy 虚拟列表",
+    "icon": "≡",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Listy",
+    "description": "只渲染可视区域的长列表，支持固定 / 动态行高、滚动到指定行、触底加载与页脚。"
+  },
+  {
+    "id": "masonry",
+    "title": "Masonry 瀑布流",
+    "icon": "▤",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Masonry",
+    "description": "基于测量的真正瀑布流：按最短列放置，响应式列数，增删卡片时平滑重排。"
+  },
+  {
+    "id": "qrcode",
+    "title": "QRCode 二维码",
+    "icon": "▣",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "QRCode",
+    "description": "内置零依赖的 QR 编码器（Byte 模式，1–40 版本，L/M/Q/H 纠错），支持 SVG / Canvas 渲染、中心 Logo 与状态遮罩。"
+  },
+  {
+    "id": "watermark",
+    "title": "Watermark 水印",
+    "icon": "▧",
+    "group": "反馈组件",
+    "eyebrow": "FEEDBACK",
+    "badge": "Watermark",
+    "description": "基于 canvas 的文字 / 图片平铺水印，支持多行、旋转、间距、字体配置、全屏模式与防篡改。"
+  },
+  {
+    "id": "splitter",
+    "title": "Splitter 分隔面板",
+    "icon": "◫",
+    "group": "布局组件",
+    "eyebrow": "LAYOUT",
+    "badge": "Splitter",
+    "description": "可拖拽调整的多面板布局，支持水平 / 垂直、最小最大尺寸、折叠、禁止调整与延迟应用。"
+  },
+  {
+    "id": "icon",
+    "title": "Icon 图标",
+    "icon": "✦",
+    "group": "基础组件",
+    "description": "使用轻量的内联 SVG 图标表达清晰、可访问的操作含义。"
+  },
+  {
+    "id": "flex",
+    "title": "Flex 弹性布局",
+    "icon": "↔",
+    "group": "布局组件",
+    "description": "使用常见的 Flexbox 属性快速对齐和排列内容。"
+  },
+  {
+    "id": "space",
+    "title": "Space 间距",
+    "icon": "↔",
+    "group": "布局组件",
+    "description": "为一组相邻元素提供统一、可换行的间距。"
+  },
+  {
+    "id": "layout",
+    "title": "Layout 布局",
+    "icon": "▤",
+    "group": "布局组件",
+    "description": "组合页头、侧栏、内容区和页脚，搭建常见页面骨架。"
+  },
+  {
+    "id": "grid",
+    "title": "Grid 栅格",
+    "icon": "▦",
+    "group": "布局组件",
+    "description": "基于 24 列的网格快速构建对齐的内容布局。"
+  },
+  {
+    "id": "inputOTP",
+    "title": "InputOTP 验证码输入",
+    "icon": "▦",
+    "group": "数据录入",
+    "description": "将一次性验证码拆分为易于输入和校验的独立数字格。"
+  },
+  {
+    "id": "result",
+    "title": "Result 结果",
+    "icon": "✓",
+    "group": "反馈组件",
+    "description": "在独立页面或任务结束后呈现清晰的状态与下一步操作。"
+  },
+  {
+    "id": "message",
+    "title": "Message 全局提示",
+    "icon": "·",
+    "group": "反馈组件",
+    "description": "在页面顶部短暂展示轻量级的操作结果提示。"
+  },
+  {
+    "id": "notification",
+    "title": "Notification 通知提醒",
+    "icon": "▣",
+    "group": "反馈组件",
+    "description": "在屏幕角落呈现带标题和描述的详细通知卡片。"
+  },
+  {
+    "id": "configProvider",
+    "title": "ConfigProvider 全局化配置",
+    "icon": "⚙",
+    "group": "通用组件",
+    "description": "在子树范围统一配置前缀、方向、尺寸、语言和主题变量。"
+  },
+  {
+    "id": "marquee",
+    "title": "Marquee 滚动展示",
+    "icon": "⇢",
+    "description": "以连续循环的轨道展示标签、动态或品牌内容。",
+    "group": "动画"
+  },
+  {
+    "id": "numberTicker",
+    "title": "NumberTicker 数值滚动",
+    "icon": "↗",
+    "description": "使用缓动数字递增强调统计值和关键指标。",
+    "group": "动画"
+  },
+  {
+    "id": "typingAnimation",
+    "title": "TypingAnimation 打字效果",
+    "icon": "▏",
+    "description": "逐字输入、停顿并轮播多段短文案。",
+    "group": "动画"
+  },
+  {
+    "id": "blurFade",
+    "title": "BlurFade 模糊渐入",
+    "icon": "◌",
+    "description": "让内容以轻微位移和模糊渐显，支持错峰延迟。",
+    "group": "动画"
+  },
+  {
+    "id": "fadeIn",
+    "title": "FadeIn 淡入",
+    "icon": "◦",
+    "description": "让内容以轻柔的透明度渐变进入，可配置延迟与时长。",
+    "group": "动画"
+  },
+  {
+    "id": "slideIn",
+    "title": "SlideIn 滑入",
+    "icon": "⇲",
+    "description": "让内容从指定方向平滑滑入，同时淡入显示。",
+    "group": "动画"
+  },
+  {
+    "id": "scrollReveal",
+    "title": "ScrollReveal 滚动显现",
+    "icon": "⌄",
+    "description": "元素进入视口时渐入，可选择方向、距离及是否重复触发。",
+    "group": "动画"
+  },
+  {
+    "id": "scaleIn",
+    "title": "ScaleIn 缩放弹入",
+    "icon": "⊙",
+    "description": "内容从较小比例平滑放大并淡入，适用于卡片、弹窗和菜单。",
+    "group": "动画"
+  },
+  {
+    "id": "stagger",
+    "title": "Stagger 错峰动画",
+    "icon": "☷",
+    "description": "以错峰顺序呈现任意子元素，适合标签、卡片和列表内容。",
+    "group": "动画"
+  },
+  {
+    "id": "expand",
+    "title": "Expand 平滑展开",
+    "icon": "⌄",
+    "description": "对受控内容进行平滑展开与收起，并隐藏折叠内容的辅助技术焦点。",
+    "group": "动画"
+  },
+  {
+    "id": "pulse",
+    "title": "Pulse 呼吸",
+    "icon": "◉",
+    "description": "以柔和的循环缩放和透明度变化强调需要关注的内容。",
+    "group": "动画"
+  },
+  {
+    "id": "glow",
+    "title": "Glow 柔光",
+    "icon": "✧",
+    "description": "在内容周围循环显示柔和光晕，可自定义颜色与速度。",
+    "group": "动画"
+  },
+  {
+    "id": "shake",
+    "title": "Shake 震动反馈",
+    "icon": "↔",
+    "description": "通过短促的水平抖动反馈错误或无效操作，可用 active 重新触发。",
+    "group": "动画"
+  },
+  {
+    "id": "wobble",
+    "title": "Wobble 摇摆反馈",
+    "icon": "↝",
+    "description": "以轻微旋转摆动吸引注意，可用 active 控制播放与重播。",
+    "group": "动画"
+  },
+  {
+    "id": "hoverLift",
+    "title": "HoverLift 悬停抬升",
+    "icon": "⌃",
+    "description": "鼠标悬停时轻微上浮，常用于卡片和可点击内容。",
+    "group": "动画"
+  },
+  {
+    "id": "press",
+    "title": "Press 按压反馈",
+    "icon": "●",
+    "description": "指针按下时轻微缩小，提供即时的交互反馈。",
+    "group": "动画"
+  },
+  {
+    "id": "flipIn",
+    "title": "FlipIn 翻转进入",
+    "icon": "⟳",
+    "description": "内容以 3D 翻转并淡入，可选择绕 X 或 Y 轴旋转。",
+    "group": "动画"
+  },
+  {
+    "id": "flipCard",
+    "title": "FlipCard 翻转卡片",
+    "icon": "▣",
+    "description": "通过外部状态控制卡片正反面翻转。",
+    "group": "动画"
+  },
+  {
+    "id": "confetti",
+    "title": "Confetti 庆祝粒子",
+    "icon": "✳",
+    "description": "在内容周围播放轻量庆祝粒子，支持数量、颜色与时长。",
+    "group": "动画"
+  },
+  {
+    "id": "shimmer",
+    "title": "Shimmer 流光",
+    "icon": "✧",
+    "description": "为内容表面添加柔和的掠光效果，可自定义高光颜色。",
+    "group": "动画"
+  },
+  {
+    "id": "animatedList",
+    "title": "AnimatedList 列表渐入",
+    "icon": "☷",
+    "description": "以错峰渐入动画呈现动态列表内容。",
+    "group": "动画"
+  },
+  {
+    "id": "transition",
+    "title": "Transition 单项过渡",
+    "icon": "↕",
+    "description": "为条件显示的面板或内容提供统一的进入、退出生命周期。",
+    "group": "动画"
+  },
+  {
+    "id": "transitionGroup",
+    "title": "TransitionGroup 动态项过渡",
+    "icon": "⇅",
+    "description": "按稳定 key 管理子项增删；表单数据立即变化，退场项仅保留视觉快照。",
+    "group": "动画"
+  },
+  {
+    "id": "borderBeam",
+    "title": "BorderBeam 边框流光",
+    "icon": "✧",
+    "description": "为重点内容添加可控颜色和速度的流动边框。",
+    "group": "动画"
+  }
+]

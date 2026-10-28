@@ -1,0 +1,134 @@
+# 迁移清单
+
+原 React 库的公开运行时导出逐项记录如下。勾选代表已有 Vue 实现，不代表已完成浏览器行为验收。
+
+- [x] Button
+- [x] Input
+- [x] InputOTP
+- [x] Textarea
+- [x] Select
+- [x] Checkbox
+- [x] CheckboxGroup
+- [x] Radio
+- [x] RadioGroup
+- [x] Switch
+- [x] Modal
+- [x] Table
+- [x] Alert
+- [x] Tag
+- [x] Avatar
+- [x] Tooltip
+- [x] Badge
+- [x] Breadcrumb
+- [x] Divider
+- [x] Empty
+- [x] Pagination
+- [x] Progress
+- [x] Skeleton
+- [x] Spin
+- [x] Tabs
+- [x] Card
+- [x] Descriptions
+- [x] Steps
+- [x] Timeline
+- [x] Collapse
+- [x] DatePicker
+- [x] Upload
+- [x] Drawer
+- [ ] Controller
+- [ ] FormProvider
+- [ ] useFieldArray
+- [ ] useForm
+- [ ] useFormContext
+- [ ] useWatch
+- [ ] BackTop
+- [ ] FloatButton
+- [ ] FloatButtonGroup
+- [x] Icon
+- [ ] Link
+- [ ] Paragraph
+- [ ] Text
+- [ ] Title
+- [ ] Typography
+- [x] Flex
+- [x] Space
+- [x] Layout
+- [x] LayoutHeader
+- [x] LayoutSider
+- [x] LayoutContent
+- [x] LayoutFooter
+- [x] Grid
+- [x] GridCol
+- [ ] Affix
+- [ ] Anchor
+- [ ] Dropdown
+- [ ] AutoComplete
+- [x] InputNumber
+- [x] Rate
+- [x] Slider
+- [x] TimePicker
+- [ ] formatTime
+- [ ] parseTime
+- [x] Segmented
+- [x] Countdown
+- [x] Statistic
+- [ ] formatCountdown
+- [ ] formatStatistic
+- [x] Image
+- [x] ImagePreviewGroup
+- [x] Popover
+- [x] Popconfirm
+- [x] Result
+- [ ] Cascader
+- [x] ColorPicker
+- [ ] hsvToRgb
+- [ ] parseColor
+- [ ] rgbToHsv
+- [ ] toHex
+- [ ] Mentions
+- [ ] Transfer
+- [ ] TreeSelect
+- [ ] Calendar
+- [ ] Carousel
+- [x] List
+- [x] ListItem
+- [x] ListItemMeta
+- [x] Listy
+- [ ] Masonry
+- [x] QRCode
+- [ ] Menu
+- [ ] Tree
+- [ ] Tour
+- [ ] Watermark
+- [ ] Splitter
+- [ ] SplitterPanel
+- [ ] Message
+- [ ] message
+- [ ] Notification
+- [ ] notification
+- [x] ConfigProvider
+- [ ] useConfig
+- [x] BorderBeam
+- [x] Marquee
+- [x] NumberTicker
+- [x] TypingAnimation
+- [x] BlurFade
+- [x] FadeIn
+- [x] SlideIn
+- [x] ScrollReveal
+- [x] ScaleIn
+- [ ] Stagger
+- [x] Expand
+- [x] Pulse
+- [x] Glow
+- [x] Shake
+- [x] Wobble
+- [x] HoverLift
+- [x] Press
+- [x] FlipIn
+- [x] FlipCard
+- [x] Confetti
+- [x] Shimmer
+- [x] AnimatedList
+- [ ] Transition
+- [ ] TransitionGroup

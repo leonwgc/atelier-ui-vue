@@ -1,0 +1,1384 @@
+{
+  "Space": {
+    "code": "<script setup lang=\"ts\">\nimport { Space } from 'atelier-ui-vue/space';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Space>Atelier · Thoughtful by design</Space>\n</template>",
+    "rows": [
+      [
+        "size",
+        "number | string",
+        "12"
+      ],
+      [
+        "direction",
+        "'horizontal' | 'vertical'",
+        "'horizontal'"
+      ],
+      [
+        "wrap",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Expand": {
+    "code": "<script setup lang=\"ts\">\nimport { Expand } from 'atelier-ui-vue/expand';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Expand :open='true'>展开的内容</Expand>\n</template>",
+    "rows": [
+      [
+        "open",
+        "boolean",
+        "required"
+      ],
+      [
+        "duration",
+        "number",
+        "300"
+      ]
+    ],
+    "props": {
+      "open": true
+    },
+    "content": "展开的内容"
+  },
+  "Pagination": {
+    "code": "<script setup lang=\"ts\">\nimport { Pagination } from 'atelier-ui-vue/pagination';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Pagination :current='1' :page-size='10' :total='125' :show-size-changer='true' />\n</template>",
+    "rows": [
+      [
+        "current",
+        "number",
+        "required"
+      ],
+      [
+        "pageSize",
+        "number",
+        "required"
+      ],
+      [
+        "total",
+        "number",
+        "required"
+      ],
+      [
+        "pageSizeOptions",
+        "number[]",
+        "() => [10, 20, 50]"
+      ],
+      [
+        "showSizeChanger",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {
+      "current": 1,
+      "pageSize": 10,
+      "total": 125,
+      "showSizeChanger": true
+    },
+    "content": ""
+  },
+  "Tabs": {
+    "code": "<script setup lang=\"ts\">\nimport { Tabs } from 'atelier-ui-vue/tabs';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Tabs :items='[{\"key\": \"overview\", \"label\": \"概览\", \"title\": \"项目概览\", \"children\": \"工作区中的全部项目\"}, {\"key\": \"details\", \"label\": \"详情\", \"title\": \"协作详情\", \"children\": \"团队协作与任务进度\"}]' />\n</template>",
+    "rows": [
+      [
+        "items",
+        "{ key: string; label: string; disabled?: boolean; children?: string }[]",
+        "required"
+      ],
+      [
+        "activeKey",
+        "string",
+        "—"
+      ],
+      [
+        "defaultActiveKey",
+        "string",
+        "—"
+      ]
+    ],
+    "props": {
+      "items": [
+        {
+          "key": "overview",
+          "label": "概览",
+          "title": "项目概览",
+          "children": "工作区中的全部项目"
+        },
+        {
+          "key": "details",
+          "label": "详情",
+          "title": "协作详情",
+          "children": "团队协作与任务进度"
+        }
+      ]
+    },
+    "content": ""
+  },
+  "Card": {
+    "code": "<script setup lang=\"ts\">\nimport { Card } from 'atelier-ui-vue/card';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Card title=\"项目概览\">精心打磨每一个细节。</Card>\n</template>",
+    "rows": [
+      [
+        "title",
+        "string",
+        "—"
+      ],
+      [
+        "hoverable",
+        "boolean",
+        "—"
+      ],
+      [
+        "bordered",
+        "boolean",
+        "true"
+      ]
+    ],
+    "props": {
+      "title": "项目概览"
+    },
+    "content": "精心打磨每一个细节。"
+  },
+  "Radio": {
+    "code": "<script setup lang=\"ts\">\nimport { Radio } from 'atelier-ui-vue/radio';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Radio />\n</template>",
+    "rows": [
+      [
+        "modelValue",
+        "boolean",
+        "—"
+      ],
+      [
+        "defaultChecked",
+        "boolean",
+        "—"
+      ],
+      [
+        "disabled",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {},
+    "content": ""
+  },
+  "Progress": {
+    "code": "<script setup lang=\"ts\">\nimport { Progress } from 'atelier-ui-vue/progress';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Progress :percent='65' />\n</template>",
+    "rows": [
+      [
+        "percent",
+        "number",
+        "required"
+      ],
+      [
+        "status",
+        "'normal' | 'active' | 'success' | 'exception'",
+        "—"
+      ],
+      [
+        "showInfo",
+        "boolean",
+        "true"
+      ],
+      [
+        "strokeColor",
+        "string",
+        "—"
+      ],
+      [
+        "label",
+        "string",
+        "—"
+      ]
+    ],
+    "props": {
+      "percent": 65
+    },
+    "content": ""
+  },
+  "Collapse": {
+    "code": "<script setup lang=\"ts\">\nimport { Collapse } from 'atelier-ui-vue/collapse';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Collapse :items='[{\"key\": \"overview\", \"label\": \"概览\", \"title\": \"项目概览\", \"children\": \"工作区中的全部项目\"}, {\"key\": \"details\", \"label\": \"详情\", \"title\": \"协作详情\", \"children\": \"团队协作与任务进度\"}]' />\n</template>",
+    "rows": [
+      [
+        "items",
+        "{ key: string; title: string; children?: string; disabled?: boolean }[]",
+        "required"
+      ],
+      [
+        "accordion",
+        "boolean",
+        "—"
+      ],
+      [
+        "activeKey",
+        "string | string[]",
+        "—"
+      ],
+      [
+        "defaultActiveKey",
+        "string | string[]",
+        "—"
+      ]
+    ],
+    "props": {
+      "items": [
+        {
+          "key": "overview",
+          "label": "概览",
+          "title": "项目概览",
+          "children": "工作区中的全部项目"
+        },
+        {
+          "key": "details",
+          "label": "详情",
+          "title": "协作详情",
+          "children": "团队协作与任务进度"
+        }
+      ]
+    },
+    "content": ""
+  },
+  "Result": {
+    "code": "<script setup lang=\"ts\">\nimport { Result } from 'atelier-ui-vue/result';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Result status=\"success\" title=\"创建成功\" sub-title=\"现在可以邀请成员一起协作。\" />\n</template>",
+    "rows": [
+      [
+        "status",
+        "'success' | 'error' | 'info' | 'warning' | '404' | '500'",
+        "'info'"
+      ],
+      [
+        "title",
+        "string",
+        "—"
+      ],
+      [
+        "subTitle",
+        "string",
+        "—"
+      ]
+    ],
+    "props": {
+      "status": "success",
+      "title": "创建成功",
+      "subTitle": "现在可以邀请成员一起协作。"
+    },
+    "content": ""
+  },
+  "LayoutSider": {
+    "code": "<script setup lang=\"ts\">\nimport { LayoutSider } from 'atelier-ui-vue/layout-sider';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <LayoutSider>Atelier · Thoughtful by design</LayoutSider>\n</template>",
+    "rows": [
+      [
+        "width",
+        "number | string",
+        "220"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Glow": {
+    "code": "<script setup lang=\"ts\">\nimport { Glow } from 'atelier-ui-vue/glow';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Glow>Atelier · Thoughtful by design</Glow>\n</template>",
+    "rows": [
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "1800"
+      ],
+      [
+        "color",
+        "string",
+        "'#8b7dff'"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Grid": {
+    "code": "<script setup lang=\"ts\">\nimport { Grid } from 'atelier-ui-vue/grid';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Grid>Atelier · Thoughtful by design</Grid>\n</template>",
+    "rows": [
+      [
+        "columns",
+        "number",
+        "24"
+      ],
+      [
+        "gap",
+        "number | string",
+        "16"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Shimmer": {
+    "code": "<script setup lang=\"ts\">\nimport { Shimmer } from 'atelier-ui-vue/shimmer';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Shimmer>Atelier · Thoughtful by design</Shimmer>\n</template>",
+    "rows": [
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "1800"
+      ],
+      [
+        "highlight",
+        "string",
+        "'rgb(255 255 255 / 62%)'"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "LayoutFooter": {
+    "code": "<script setup lang=\"ts\">\nimport { LayoutFooter } from 'atelier-ui-vue/layout-footer';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <LayoutFooter>Atelier · Thoughtful by design</LayoutFooter>\n</template>",
+    "rows": [],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "LayoutHeader": {
+    "code": "<script setup lang=\"ts\">\nimport { LayoutHeader } from 'atelier-ui-vue/layout-header';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <LayoutHeader>Atelier · Thoughtful by design</LayoutHeader>\n</template>",
+    "rows": [],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Divider": {
+    "code": "<script setup lang=\"ts\">\nimport { Divider } from 'atelier-ui-vue/divider';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Divider />\n</template>",
+    "rows": [
+      [
+        "orientation",
+        "'horizontal' | 'vertical'",
+        "'horizontal'"
+      ],
+      [
+        "dashed",
+        "boolean",
+        "—"
+      ],
+      [
+        "plain",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {},
+    "content": ""
+  },
+  "Empty": {
+    "code": "<script setup lang=\"ts\">\nimport { Empty } from 'atelier-ui-vue/empty';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Empty />\n</template>",
+    "rows": [
+      [
+        "description",
+        "string",
+        "'暂无数据'"
+      ]
+    ],
+    "props": {},
+    "content": ""
+  },
+  "GridCol": {
+    "code": "<script setup lang=\"ts\">\nimport { GridCol } from 'atelier-ui-vue/grid-col';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <GridCol>Atelier · Thoughtful by design</GridCol>\n</template>",
+    "rows": [
+      [
+        "span",
+        "number",
+        "12"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Drawer": {
+    "code": "<script setup lang=\"ts\">\nimport { Drawer } from 'atelier-ui-vue/drawer';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Drawer />\n</template>",
+    "rows": [
+      [
+        "open",
+        "boolean",
+        "required"
+      ],
+      [
+        "title",
+        "string",
+        "—"
+      ],
+      [
+        "description",
+        "string",
+        "—"
+      ],
+      [
+        "width",
+        "number | string",
+        "420"
+      ],
+      [
+        "placement",
+        "'left' | 'right'",
+        "'right'"
+      ],
+      [
+        "maskClosable",
+        "boolean",
+        "true"
+      ],
+      [
+        "closeOnEscape",
+        "boolean",
+        "true"
+      ],
+      [
+        "okText",
+        "string",
+        "'确定'"
+      ],
+      [
+        "cancelText",
+        "string",
+        "'取消'"
+      ],
+      [
+        "confirmLoading",
+        "boolean",
+        "—"
+      ],
+      [
+        "footer",
+        "boolean",
+        "true"
+      ]
+    ],
+    "props": {},
+    "content": ""
+  },
+  "Marquee": {
+    "code": "<script setup lang=\"ts\">\nimport { Marquee } from 'atelier-ui-vue/marquee';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Marquee>Design systems · Product teams · Made to move</Marquee>\n</template>",
+    "rows": [
+      [
+        "duration",
+        "number",
+        "28"
+      ],
+      [
+        "direction",
+        "'left' | 'right'",
+        "'left'"
+      ],
+      [
+        "pauseOnHover",
+        "boolean",
+        "true"
+      ],
+      [
+        "gradient",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {},
+    "content": "Design systems · Product teams · Made to move"
+  },
+  "Flex": {
+    "code": "<script setup lang=\"ts\">\nimport { Flex } from 'atelier-ui-vue/flex';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Flex>Atelier · Thoughtful by design</Flex>\n</template>",
+    "rows": [
+      [
+        "vertical",
+        "boolean",
+        "—"
+      ],
+      [
+        "gap",
+        "number | string",
+        "12"
+      ],
+      [
+        "align",
+        "CSSProperties['alignItems']",
+        "'center'"
+      ],
+      [
+        "justify",
+        "CSSProperties['justifyContent']",
+        "'flex-start'"
+      ],
+      [
+        "wrap",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Alert": {
+    "code": "<script setup lang=\"ts\">\nimport { Alert } from 'atelier-ui-vue/alert';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Alert title=\"更改已保存\" variant=\"success\">你的工作区已更新。</Alert>\n</template>",
+    "rows": [
+      [
+        "variant",
+        "'info' | 'success' | 'warning' | 'error'",
+        "'info'"
+      ],
+      [
+        "title",
+        "string",
+        "—"
+      ],
+      [
+        "closable",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {
+      "title": "更改已保存",
+      "variant": "success"
+    },
+    "content": "你的工作区已更新。"
+  },
+  "SlideIn": {
+    "code": "<script setup lang=\"ts\">\nimport { SlideIn } from 'atelier-ui-vue/slide-in';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <SlideIn>Atelier · Thoughtful by design</SlideIn>\n</template>",
+    "rows": [
+      [
+        "direction",
+        "'left' | 'right' | 'up' | 'down'",
+        "'up'"
+      ],
+      [
+        "distance",
+        "number",
+        "16"
+      ],
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "500"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Tag": {
+    "code": "<script setup lang=\"ts\">\nimport { Tag } from 'atelier-ui-vue/tag';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Tag variant=\"success\">已发布</Tag>\n</template>",
+    "rows": [
+      [
+        "variant",
+        "'neutral' | 'primary' | 'success' | 'warning' | 'danger'",
+        "'neutral'"
+      ],
+      [
+        "closable",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {
+      "variant": "success"
+    },
+    "content": "已发布"
+  },
+  "FlipIn": {
+    "code": "<script setup lang=\"ts\">\nimport { FlipIn } from 'atelier-ui-vue/flip-in';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <FlipIn>Atelier · Thoughtful by design</FlipIn>\n</template>",
+    "rows": [
+      [
+        "direction",
+        "'x' | 'y'",
+        "'y'"
+      ],
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "600"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Switch": {
+    "code": "<script setup lang=\"ts\">\nimport { Switch } from 'atelier-ui-vue/switch';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Switch aria-label=\"开启产品更新\" />\n</template>",
+    "rows": [
+      [
+        "modelValue",
+        "boolean",
+        "—"
+      ],
+      [
+        "defaultChecked",
+        "boolean",
+        "—"
+      ],
+      [
+        "disabled",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {
+      "aria-label": "开启产品更新"
+    },
+    "content": ""
+  },
+  "Timeline": {
+    "code": "<script setup lang=\"ts\">\nimport { Timeline } from 'atelier-ui-vue/timeline';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Timeline :items='[{\"key\": \"created\", \"label\": \"09:00\", \"content\": \"创建工作区\"}, {\"key\": \"published\", \"label\": \"10:30\", \"content\": \"发布第一个项目\"}]' />\n</template>",
+    "rows": [
+      [
+        "items",
+        "{ key: string; content: string; label?: string; color?: string }[]",
+        "required"
+      ],
+      [
+        "pending",
+        "string",
+        "—"
+      ]
+    ],
+    "props": {
+      "items": [
+        {
+          "key": "created",
+          "label": "09:00",
+          "content": "创建工作区"
+        },
+        {
+          "key": "published",
+          "label": "10:30",
+          "content": "发布第一个项目"
+        }
+      ]
+    },
+    "content": ""
+  },
+  "Shake": {
+    "code": "<script setup lang=\"ts\">\nimport { Shake } from 'atelier-ui-vue/shake';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Shake>Atelier · Thoughtful by design</Shake>\n</template>",
+    "rows": [
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "650"
+      ],
+      [
+        "active",
+        "boolean",
+        "true"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Breadcrumb": {
+    "code": "<script setup lang=\"ts\">\nimport { Breadcrumb } from 'atelier-ui-vue/breadcrumb';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Breadcrumb :items='[{\"title\": \"首页\", \"href\": \"#\"}, {\"title\": \"项目\"}, {\"title\": \"工作区\"}]' />\n</template>",
+    "rows": [
+      [
+        "items",
+        "{ title: string; href?: string; onClick?: () => void }[]",
+        "required"
+      ],
+      [
+        "separator",
+        "string",
+        "'/'"
+      ]
+    ],
+    "props": {
+      "items": [
+        {
+          "title": "首页",
+          "href": "#"
+        },
+        {
+          "title": "项目"
+        },
+        {
+          "title": "工作区"
+        }
+      ]
+    },
+    "content": ""
+  },
+  "Spin": {
+    "code": "<script setup lang=\"ts\">\nimport { Spin } from 'atelier-ui-vue/spin';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Spin tip=\"加载中…\" />\n</template>",
+    "rows": [
+      [
+        "spinning",
+        "boolean",
+        "true"
+      ],
+      [
+        "size",
+        "'sm' | 'md' | 'lg'",
+        "'md'"
+      ],
+      [
+        "tip",
+        "string",
+        "—"
+      ]
+    ],
+    "props": {
+      "tip": "加载中…"
+    },
+    "content": ""
+  },
+  "Pulse": {
+    "code": "<script setup lang=\"ts\">\nimport { Pulse } from 'atelier-ui-vue/pulse';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Pulse>Atelier · Thoughtful by design</Pulse>\n</template>",
+    "rows": [
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "1400"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Avatar": {
+    "code": "<script setup lang=\"ts\">\nimport { Avatar } from 'atelier-ui-vue/avatar';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Avatar name=\"Jordan Lee\" size=\"lg\" />\n</template>",
+    "rows": [
+      [
+        "src",
+        "string",
+        "—"
+      ],
+      [
+        "alt",
+        "string",
+        "—"
+      ],
+      [
+        "name",
+        "string",
+        "—"
+      ],
+      [
+        "size",
+        "'sm' | 'md' | 'lg'",
+        "'md'"
+      ]
+    ],
+    "props": {
+      "name": "Jordan Lee",
+      "size": "lg"
+    },
+    "content": ""
+  },
+  "BlurFade": {
+    "code": "<script setup lang=\"ts\">\nimport { BlurFade } from 'atelier-ui-vue/blur-fade';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <BlurFade>Atelier · Thoughtful by design</BlurFade>\n</template>",
+    "rows": [
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "500"
+      ],
+      [
+        "blur",
+        "number",
+        "6"
+      ],
+      [
+        "offsetY",
+        "number",
+        "8"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Layout": {
+    "code": "<script setup lang=\"ts\">\nimport { Layout } from 'atelier-ui-vue/layout';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Layout>Atelier · Thoughtful by design</Layout>\n</template>",
+    "rows": [],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "LayoutContent": {
+    "code": "<script setup lang=\"ts\">\nimport { LayoutContent } from 'atelier-ui-vue/layout-content';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <LayoutContent>Atelier · Thoughtful by design</LayoutContent>\n</template>",
+    "rows": [],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "CheckboxGroup": {
+    "code": "<script setup lang=\"ts\">\nimport { CheckboxGroup } from 'atelier-ui-vue/checkbox-group';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <CheckboxGroup :options='[{\"label\": \"产品设计\", \"value\": \"design\"}, {\"label\": \"工程实践\", \"value\": \"engineering\"}]' />\n</template>",
+    "rows": [
+      [
+        "options",
+        "{ label: string; value: string; disabled?: boolean }[]",
+        "required"
+      ],
+      [
+        "modelValue",
+        "string[]",
+        "—"
+      ],
+      [
+        "defaultValue",
+        "string[]",
+        "—"
+      ],
+      [
+        "disabled",
+        "boolean",
+        "—"
+      ],
+      [
+        "name",
+        "string",
+        "—"
+      ]
+    ],
+    "props": {
+      "options": [
+        {
+          "label": "产品设计",
+          "value": "design"
+        },
+        {
+          "label": "工程实践",
+          "value": "engineering"
+        }
+      ]
+    },
+    "content": ""
+  },
+  "Descriptions": {
+    "code": "<script setup lang=\"ts\">\nimport { Descriptions } from 'atelier-ui-vue/descriptions';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Descriptions title=\"工作区信息\" :items='[{\"key\": \"name\", \"label\": \"名称\", \"children\": \"Northstar Studio\"}, {\"key\": \"owner\", \"label\": \"负责人\", \"children\": \"Jordan Lee\"}, {\"key\": \"status\", \"label\": \"状态\", \"children\": \"运行中\"}]' />\n</template>",
+    "rows": [
+      [
+        "title",
+        "string",
+        "—"
+      ],
+      [
+        "items",
+        "{ key: string; label: string; children?: string }[]",
+        "required"
+      ],
+      [
+        "column",
+        "number",
+        "3"
+      ],
+      [
+        "bordered",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {
+      "title": "工作区信息",
+      "items": [
+        {
+          "key": "name",
+          "label": "名称",
+          "children": "Northstar Studio"
+        },
+        {
+          "key": "owner",
+          "label": "负责人",
+          "children": "Jordan Lee"
+        },
+        {
+          "key": "status",
+          "label": "状态",
+          "children": "运行中"
+        }
+      ]
+    },
+    "content": ""
+  },
+  "Badge": {
+    "code": "<script setup lang=\"ts\">\nimport { Badge } from 'atelier-ui-vue/badge';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Badge :count='8'>通知</Badge>\n</template>",
+    "rows": [
+      [
+        "count",
+        "number | string",
+        "—"
+      ],
+      [
+        "dot",
+        "boolean",
+        "—"
+      ],
+      [
+        "overflowCount",
+        "number",
+        "99"
+      ],
+      [
+        "showZero",
+        "boolean",
+        "—"
+      ],
+      [
+        "status",
+        "'default' | 'success' | 'processing' | 'warning' | 'error'",
+        "—"
+      ],
+      [
+        "text",
+        "string",
+        "—"
+      ]
+    ],
+    "props": {
+      "count": 8
+    },
+    "content": "通知"
+  },
+  "Button": {
+    "code": "<script setup lang=\"ts\">\nimport { Button } from 'atelier-ui-vue/button';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Button variant=\"primary\">创建项目 →</Button>\n  <Button variant=\"secondary\">取消</Button>\n  <Button variant=\"tertiary\">了解更多 ↗</Button>\n  <Button variant=\"danger\">删除项目</Button>\n  <Button variant=\"ghost\">更多操作</Button>\n</template>",
+    "rows": [
+      [
+        "variant",
+        "'primary' | 'secondary' | 'tertiary' | 'danger' | 'ghost'",
+        "'secondary'"
+      ],
+      [
+        "size",
+        "'sm' | 'md' | 'lg'",
+        "'md'"
+      ],
+      [
+        "loading",
+        "boolean",
+        "—"
+      ],
+      [
+        "fullWidth",
+        "boolean",
+        "—"
+      ],
+      [
+        "disabled",
+        "boolean",
+        "—"
+      ],
+      [
+        "type",
+        "'button' | 'submit' | 'reset'",
+        "'button'"
+      ]
+    ],
+    "props": {
+      "variant": "primary"
+    },
+    "content": "创建项目"
+  },
+  "FlipCard": {
+    "code": "<script setup lang=\"ts\">\nimport { FlipCard } from 'atelier-ui-vue/flip-card';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <FlipCard />\n</template>",
+    "rows": [
+      [
+        "flipped",
+        "boolean",
+        "—"
+      ],
+      [
+        "direction",
+        "'horizontal' | 'vertical'",
+        "'horizontal'"
+      ]
+    ],
+    "props": {},
+    "content": ""
+  },
+  "FadeIn": {
+    "code": "<script setup lang=\"ts\">\nimport { FadeIn } from 'atelier-ui-vue/fade-in';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <FadeIn>Atelier · Thoughtful by design</FadeIn>\n</template>",
+    "rows": [
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "500"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Modal": {
+    "code": "<script setup lang=\"ts\">\nimport { Modal } from 'atelier-ui-vue/modal';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Modal />\n</template>",
+    "rows": [
+      [
+        "open",
+        "boolean",
+        "required"
+      ],
+      [
+        "title",
+        "string",
+        "—"
+      ],
+      [
+        "description",
+        "string",
+        "—"
+      ],
+      [
+        "width",
+        "number | string",
+        "520"
+      ],
+      [
+        "placement",
+        "'left' | 'right'",
+        "'right'"
+      ],
+      [
+        "maskClosable",
+        "boolean",
+        "true"
+      ],
+      [
+        "closeOnEscape",
+        "boolean",
+        "true"
+      ],
+      [
+        "okText",
+        "string",
+        "'确定'"
+      ],
+      [
+        "cancelText",
+        "string",
+        "'取消'"
+      ],
+      [
+        "confirmLoading",
+        "boolean",
+        "—"
+      ],
+      [
+        "footer",
+        "boolean",
+        "true"
+      ]
+    ],
+    "props": {},
+    "content": ""
+  },
+  "RadioGroup": {
+    "code": "<script setup lang=\"ts\">\nimport { RadioGroup } from 'atelier-ui-vue/radio-group';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <RadioGroup :options='[{\"label\": \"产品设计\", \"value\": \"design\"}, {\"label\": \"工程实践\", \"value\": \"engineering\"}]' />\n</template>",
+    "rows": [
+      [
+        "options",
+        "{ label: string; value: string; disabled?: boolean }[]",
+        "required"
+      ],
+      [
+        "modelValue",
+        "string",
+        "—"
+      ],
+      [
+        "defaultValue",
+        "string",
+        "—"
+      ],
+      [
+        "disabled",
+        "boolean",
+        "—"
+      ],
+      [
+        "name",
+        "string",
+        "—"
+      ]
+    ],
+    "props": {
+      "options": [
+        {
+          "label": "产品设计",
+          "value": "design"
+        },
+        {
+          "label": "工程实践",
+          "value": "engineering"
+        }
+      ]
+    },
+    "content": ""
+  },
+  "Checkbox": {
+    "code": "<script setup lang=\"ts\">\nimport { Checkbox } from 'atelier-ui-vue/checkbox';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Checkbox />\n</template>",
+    "rows": [
+      [
+        "modelValue",
+        "boolean",
+        "—"
+      ],
+      [
+        "defaultChecked",
+        "boolean",
+        "—"
+      ],
+      [
+        "disabled",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {},
+    "content": ""
+  },
+  "Textarea": {
+    "code": "<script setup lang=\"ts\">\nimport { Textarea } from 'atelier-ui-vue/textarea';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Textarea label=\"项目名称\" placeholder=\"请输入项目名称\" />\n</template>",
+    "rows": [
+      [
+        "modelValue",
+        "string",
+        "—"
+      ],
+      [
+        "defaultValue",
+        "string",
+        "—"
+      ],
+      [
+        "label",
+        "string",
+        "—"
+      ],
+      [
+        "hint",
+        "string",
+        "—"
+      ],
+      [
+        "error",
+        "string",
+        "—"
+      ],
+      [
+        "id",
+        "string",
+        "—"
+      ]
+    ],
+    "props": {
+      "label": "项目名称",
+      "placeholder": "请输入项目名称"
+    },
+    "content": ""
+  },
+  "Input": {
+    "code": "<script setup lang=\"ts\">\nimport { Input } from 'atelier-ui-vue/input';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Input label=\"项目名称\" placeholder=\"请输入项目名称\" />\n</template>",
+    "rows": [
+      [
+        "modelValue",
+        "string | number",
+        "—"
+      ],
+      [
+        "defaultValue",
+        "string | number",
+        "—"
+      ],
+      [
+        "size",
+        "'sm' | 'md' | 'lg'",
+        "'md'"
+      ],
+      [
+        "label",
+        "string",
+        "—"
+      ],
+      [
+        "hint",
+        "string",
+        "—"
+      ],
+      [
+        "error",
+        "string",
+        "—"
+      ],
+      [
+        "clearable",
+        "boolean",
+        "—"
+      ],
+      [
+        "disabled",
+        "boolean",
+        "—"
+      ],
+      [
+        "id",
+        "string",
+        "—"
+      ]
+    ],
+    "props": {
+      "label": "项目名称",
+      "placeholder": "请输入项目名称"
+    },
+    "content": ""
+  },
+  "Skeleton": {
+    "code": "<script setup lang=\"ts\">\nimport { Skeleton } from 'atelier-ui-vue/skeleton';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Skeleton :active='true' :avatar='true' />\n</template>",
+    "rows": [
+      [
+        "active",
+        "boolean",
+        "—"
+      ],
+      [
+        "avatar",
+        "boolean",
+        "—"
+      ],
+      [
+        "title",
+        "boolean",
+        "true"
+      ],
+      [
+        "paragraph",
+        "boolean | { rows?: number }",
+        "true"
+      ]
+    ],
+    "props": {
+      "active": true,
+      "avatar": true
+    },
+    "content": ""
+  },
+  "HoverLift": {
+    "code": "<script setup lang=\"ts\">\nimport { HoverLift } from 'atelier-ui-vue/hover-lift';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <HoverLift>Atelier · Thoughtful by design</HoverLift>\n</template>",
+    "rows": [
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "500"
+      ],
+      [
+        "lift",
+        "number",
+        "6"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Wobble": {
+    "code": "<script setup lang=\"ts\">\nimport { Wobble } from 'atelier-ui-vue/wobble';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Wobble>Atelier · Thoughtful by design</Wobble>\n</template>",
+    "rows": [
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "900"
+      ],
+      [
+        "active",
+        "boolean",
+        "true"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "Press": {
+    "code": "<script setup lang=\"ts\">\nimport { Press } from 'atelier-ui-vue/press';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <Press>Atelier · Thoughtful by design</Press>\n</template>",
+    "rows": [
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "500"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "BorderBeam": {
+    "code": "<script setup lang=\"ts\">\nimport { BorderBeam } from 'atelier-ui-vue/border-beam';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <BorderBeam>Atelier · Thoughtful by design</BorderBeam>\n</template>",
+    "rows": [
+      [
+        "color",
+        "string",
+        "'#8b7dff'"
+      ],
+      [
+        "duration",
+        "number",
+        "5"
+      ],
+      [
+        "paused",
+        "boolean",
+        "—"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  },
+  "ScaleIn": {
+    "code": "<script setup lang=\"ts\">\nimport { ScaleIn } from 'atelier-ui-vue/scale-in';\nimport 'atelier-ui-vue/style.css';\n</script>\n\n<template>\n  <ScaleIn>Atelier · Thoughtful by design</ScaleIn>\n</template>",
+    "rows": [
+      [
+        "delay",
+        "number",
+        "0"
+      ],
+      [
+        "duration",
+        "number",
+        "450"
+      ],
+      [
+        "startScale",
+        "number",
+        "0.88"
+      ]
+    ],
+    "props": {},
+    "content": "Atelier · Thoughtful by design"
+  }
+}

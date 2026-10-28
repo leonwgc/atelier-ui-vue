@@ -1,0 +1,2 @@
+<script setup lang="ts">import './styles/theme.css'; import './styles/list.css'; defineProps<{ title?: string; description?: string }>();</script>
+<template><div class="at-list__meta"><div v-if="$slots.avatar" class="at-list__meta-avatar"><slot name="avatar" /></div><div class="at-list__meta-body"><div v-if="title || $slots.title" class="at-list__meta-title"><slot name="title">{{ title }}</slot></div><div v-if="description || $slots.description" class="at-list__meta-description"><slot name="description">{{ description }}</slot></div></div></div></template>
