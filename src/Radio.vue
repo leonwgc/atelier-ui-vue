@@ -5,7 +5,7 @@ export default { inheritAttrs: false };
 import './styles/theme.css';
 import './styles/radio.css';
 import { ref, useAttrs, computed } from 'vue';
-const props = defineProps<{ modelValue?: boolean; defaultChecked?: boolean; disabled?: boolean }>();
+const props = withDefaults(defineProps<{ modelValue?: boolean; defaultChecked?: boolean; disabled?: boolean }>(), { modelValue: undefined });
 const inner = ref(props.defaultChecked ?? false);
 const attrs = useAttrs();
 const checked = computed(() => props.modelValue ?? inner.value);

@@ -3,7 +3,7 @@ import './styles/theme.css';
 import './styles/popover.css';
 import Overlay from './internal/Overlay.vue';
 import type { PopupPlacement } from './internal/floating';
-withDefaults(defineProps<{ content?: string; title?: string; arrow?: boolean; open?: boolean; defaultOpen?: boolean; disabled?: boolean; trigger?: 'click' | 'hover' | 'focus' | 'contextMenu'; placement?: PopupPlacement; overlayClassName?: string; mouseEnterDelay?: number; mouseLeaveDelay?: number }>(), { arrow: true, trigger: 'click', placement: 'bottom' });
+withDefaults(defineProps<{ content?: string; title?: string; arrow?: boolean; open?: boolean; defaultOpen?: boolean; disabled?: boolean; trigger?: 'click' | 'hover' | 'focus' | 'contextMenu' | ('click' | 'hover' | 'focus' | 'contextMenu')[]; placement?: PopupPlacement; overlayClassName?: string; mouseEnterDelay?: number; mouseLeaveDelay?: number }>(), { open: undefined, arrow: true, trigger: 'click', placement: 'bottom' });
 const emit = defineEmits<{ 'update:open': [value: boolean] }>();
 </script>
 

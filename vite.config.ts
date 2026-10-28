@@ -1,10 +1,30 @@
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 import vue from '@vitejs/plugin-vue';
-
+import { readFileSync, readdirSync } from 'node:fs';
+import entries from './library-entries.json' with { type: 'json' };
+function attachStyles(): Plugin {
+  return {
+    name: 'atelier-vue-component-styles',
+    generateBundle(options, bundle) {
+      for (const item of Object.values(bundle)) {
+        if (item.type !== 'chunk') continue;
+        const styles = (item as typeof item & { viteMetadata?: { importedCss?: Set<string> } }).viteMetadata?.importedCss;
+        if (!styles?.size) continue;
+        const files = [...new Set([...styles, 'theme.css'])];
+        item.code = options.format === 'es'
+          ? files.map(file => `import ${JSON.stringify(`./${file}`)};`).join('\n') + '\n' + item.code
+          : `if(typeof document!=="undefined"&&!(typeof process!=="undefined"&&process.versions?.node)){${files.map(file => `require(${JSON.stringify(`./${file}`)});`).join('')}}\n${item.code}`;
+      }
+      if (!bundle['index.css']) this.emitFile({ type: 'asset', fileName: 'index.css', source: ['theme.css', ...readdirSync('src/styles').filter(name => name.endsWith('.css') && name !== 'theme.css')].map(name => readFileSync(`src/styles/${name}`, 'utf8')).join('\n') });
+      this.emitFile({ type: 'asset', fileName: 'theme.css', source: readFileSync('src/styles/theme.css', 'utf8') });
+    },
+  };
+}
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), attachStyles()],
   build: {
-    lib: { entry: {"index": "src/index.ts", "button": "src/entries/button.ts", "input": "src/entries/input.ts", "switch": "src/entries/switch.ts", "card": "src/entries/card.ts", "tag": "src/entries/tag.ts", "alert": "src/entries/alert.ts", "flex": "src/entries/flex.ts", "space": "src/entries/space.ts", "grid": "src/entries/grid.ts", "grid-col": "src/entries/grid-col.ts", "layout": "src/entries/layout.ts", "layout-header": "src/entries/layout-header.ts", "layout-content": "src/entries/layout-content.ts", "layout-footer": "src/entries/layout-footer.ts", "layout-sider": "src/entries/layout-sider.ts", "divider": "src/entries/divider.ts", "avatar": "src/entries/avatar.ts", "progress": "src/entries/progress.ts", "badge": "src/entries/badge.ts", "textarea": "src/entries/textarea.ts", "checkbox": "src/entries/checkbox.ts", "radio": "src/entries/radio.ts", "checkbox-group": "src/entries/checkbox-group.ts", "radio-group": "src/entries/radio-group.ts", "tabs": "src/entries/tabs.ts", "collapse": "src/entries/collapse.ts", "pagination": "src/entries/pagination.ts", "skeleton": "src/entries/skeleton.ts", "spin": "src/entries/spin.ts", "empty": "src/entries/empty.ts", "descriptions": "src/entries/descriptions.ts", "timeline": "src/entries/timeline.ts", "breadcrumb": "src/entries/breadcrumb.ts", "result": "src/entries/result.ts", "fade-in": "src/entries/fade-in.ts", "blur-fade": "src/entries/blur-fade.ts", "scale-in": "src/entries/scale-in.ts", "pulse": "src/entries/pulse.ts", "glow": "src/entries/glow.ts", "press": "src/entries/press.ts", "hover-lift": "src/entries/hover-lift.ts", "shimmer": "src/entries/shimmer.ts", "shake": "src/entries/shake.ts", "wobble": "src/entries/wobble.ts", "slide-in": "src/entries/slide-in.ts", "flip-in": "src/entries/flip-in.ts", "expand": "src/entries/expand.ts", "flip-card": "src/entries/flip-card.ts", "border-beam": "src/entries/border-beam.ts", "marquee": "src/entries/marquee.ts", "modal": "src/entries/modal.ts", "drawer": "src/entries/drawer.ts", "date-picker": "src/entries/date-picker.ts", "steps": "src/entries/steps.ts", "upload": "src/entries/upload.ts", "icon": "src/entries/icon.ts", "number-ticker": "src/entries/number-ticker.ts", "typing-animation": "src/entries/typing-animation.ts", "scroll-reveal": "src/entries/scroll-reveal.ts", "input-o-t-p": "src/entries/input-o-t-p.ts", "input-number": "src/entries/input-number.ts", "rate": "src/entries/rate.ts", "select": "src/entries/select.ts", "statistic": "src/entries/statistic.ts", "countdown": "src/entries/countdown.ts", "confetti": "src/entries/confetti.ts", "animated-list": "src/entries/animated-list.ts", "popover": "src/entries/popover.ts", "tooltip": "src/entries/tooltip.ts", "popconfirm": "src/entries/popconfirm.ts", "table": "src/entries/table.ts", "time-picker": "src/entries/time-picker.ts", "segmented": "src/entries/segmented.ts", "color-picker": "src/entries/color-picker.ts", "slider": "src/entries/slider.ts", "config-provider": "src/entries/config-provider.ts", "q-r-code": "src/entries/q-r-code.ts", "list": "src/entries/list.ts", "list-item": "src/entries/list-item.ts", "list-item-meta": "src/entries/list-item-meta.ts", "listy": "src/entries/listy.ts", "image": "src/entries/image.ts", "image-preview-group": "src/entries/image-preview-group.ts"}, formats: ['es'], fileName: (_format, name) => name === 'index' ? 'atelier-ui-vue.js' : `${name}.js`, cssFileName: 'atelier-ui-vue' },
+    cssCodeSplit: true,
+    lib: { entry: entries, formats: ['es', 'cjs'], fileName: (format, name) => `${name}.${format === 'es' ? 'js' : 'cjs'}` },
     rolldownOptions: { external: ['vue'] },
   },
 });

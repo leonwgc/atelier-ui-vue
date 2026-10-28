@@ -7,7 +7,7 @@ import { ref, computed, useAttrs } from 'vue';
 import './styles/theme.css';
 import './styles/switch.css';
 
-const props = defineProps<{ modelValue?: boolean; defaultChecked?: boolean; disabled?: boolean }>();
+const props = withDefaults(defineProps<{ modelValue?: boolean; defaultChecked?: boolean; disabled?: boolean }>(), { modelValue: undefined });
 const emit = defineEmits<{ 'update:modelValue': [value: boolean]; change: [event: Event] }>();
 const attrs = useAttrs();
 const internal = ref(props.defaultChecked ?? false);

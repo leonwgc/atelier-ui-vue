@@ -5,7 +5,7 @@ import { ref } from 'vue';
 import Overlay from './internal/Overlay.vue';
 import Button from './Button.vue';
 import type { PopupPlacement } from './internal/floating';
-const props = withDefaults(defineProps<{ title?: string; description?: string; open?: boolean; defaultOpen?: boolean; disabled?: boolean; placement?: PopupPlacement; okText?: string; cancelText?: string; okType?: 'primary' | 'danger'; showCancel?: boolean; errorText?: string; onConfirm?: (event: MouseEvent) => void | Promise<void> }>(), { placement: 'top', okText: '确定', cancelText: '取消', okType: 'primary', showCancel: true, errorText: '操作失败，请重试。' });
+const props = withDefaults(defineProps<{ title?: string; description?: string; open?: boolean; defaultOpen?: boolean; disabled?: boolean; placement?: PopupPlacement; okText?: string; cancelText?: string; okType?: 'primary' | 'danger'; showCancel?: boolean; errorText?: string; onConfirm?: (event: MouseEvent) => void | Promise<void> }>(), { open: undefined, placement: 'top', okText: '确定', cancelText: '取消', okType: 'primary', showCancel: true, errorText: '操作失败，请重试。' });
 const pending = ref(false); const failed = ref(false); const emit = defineEmits<{ 'update:open': [value: boolean]; cancel: [event: MouseEvent] }>();
 async function confirm(event: MouseEvent, close: () => void) { if (pending.value) return; pending.value = true; failed.value = false; try { await props.onConfirm?.(event); close(); } catch { failed.value = true; } finally { pending.value = false; } }
 </script>

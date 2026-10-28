@@ -3,7 +3,7 @@ export default { inheritAttrs: false };
 </script>
 
 <script setup lang="ts">
-import { computed, ref, useAttrs } from 'vue';
+import { computed, ref, useAttrs, getCurrentInstance } from 'vue';
 import './styles/theme.css';
 import './styles/field.css';
 import './styles/input.css';
@@ -12,6 +12,7 @@ const props = withDefaults(defineProps<{
   modelValue?: string | number;
   defaultValue?: string | number;
   size?: 'sm' | 'md' | 'lg';
+  status?: 'error' | 'warning';
   label?: string;
   hint?: string;
   error?: string;
@@ -24,7 +25,8 @@ const attrs = useAttrs();
 const input = ref<HTMLInputElement | null>(null);
 const internal = ref(String(props.defaultValue ?? ''));
 const value = computed(() => props.modelValue == null ? internal.value : String(props.modelValue));
-const inputId = computed(() => props.id ?? (props.label ? `at-input-${props.label.replace(/\W+/g, '-').toLowerCase()}` : undefined));
+const generatedId = `at-input-${getCurrentInstance()?.uid}`;
+const inputId = computed(() => props.id ?? generatedId);
 function update(next: string, event: Event) {
   if (props.modelValue == null) internal.value = next;
   emit('update:modelValue', next);
@@ -42,7 +44,7 @@ function clear() {
 <template>
   <div class="at-field" :class="attrs.class" :style="attrs.style">
     <label v-if="label" class="at-field__label" :for="inputId">{{ label }}</label>
-    <div :class="['at-input-wrap', `at-input-wrap--${size}`, { 'at-input-wrap--error': error, 'at-input-wrap--disabled': disabled }]">
+    <div :class="['at-input-wrap', `at-input-wrap--${size}`, { 'at-input-wrap--error': error || status === 'error', 'at-input-wrap--warning': status === 'warning', 'at-input-wrap--disabled': disabled }]">
       <span v-if="$slots.prefix" class="at-input-wrap__adornment"><slot name="prefix" /></span>
       <input ref="input" v-bind="{ ...attrs, class: undefined, style: undefined }" :id="inputId" class="at-input" :value="value" :disabled="disabled" :aria-invalid="error ? true : undefined" @input="onInput">
       <button v-if="clearable && value && !disabled" type="button" class="at-input-wrap__clear" aria-label="清空输入" @click="clear">×</button>

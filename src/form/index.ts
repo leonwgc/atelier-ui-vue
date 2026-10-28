@@ -15,12 +15,13 @@ function fromControl<T extends FieldValues>(control: Control<T>) {
   const snapshot = useSnapshot(control);
   const formState = computed(() => snapshot.value);
   function register(name: string, rules?: RegisterOptions<T>) {
-    instance.register(name, rules);
+    const registration = instance.register(name, rules);
     return {
       name,
       get modelValue() { void snapshot.value; return instance.getValue(name); },
-      'onUpdate:modelValue': (value: unknown) => instance.setValue(name, value),
-      onBlur: () => instance.touch(name),
+      'onUpdate:modelValue': registration.onChange,
+      onBlur: registration.onBlur,
+      ref: registration.ref,
     };
   }
   return {
@@ -55,11 +56,12 @@ export const Controller = defineComponent({
   setup(props, { slots }) {
     const snapshot = useSnapshot(props.control);
     watchEffect(cleanup => { props.control._control.register(props.name, props.rules); cleanup(() => props.control._control.unregister(props.name, !props.control._control.options.shouldUnregister)); });
-    return () => { const state = snapshot.value; const instance = props.control._control; return slots.default?.({ field: { name: props.name, modelValue: instance.getValue(props.name), 'onUpdate:modelValue': (value: unknown) => instance.setValue(props.name, value), onBlur: () => instance.touch(props.name) }, fieldState: { error: state.errors[props.name], isTouched: !!state.touchedFields[props.name], isDirty: !!state.dirtyFields[props.name] }, formState: state }) ?? h('span'); };
+    return () => { const state = snapshot.value; const instance = props.control._control; const field = instance.controller(props.name); return slots.default?.({ field: { ...field, modelValue: field.value, 'onUpdate:modelValue': field.onChange }, fieldState: { error: state.errors[props.name], isTouched: !!state.touchedFields[props.name], isDirty: !!state.dirtyFields[props.name] }, formState: state }) ?? h('span'); };
   },
 });
+type InferredArrayItem<T extends FieldValues> = Extract<T[keyof T], FieldValues[]> extends never ? FieldValues : Extract<T[keyof T], FieldValues[]>[number];
 let fieldId = 0;
-export function useFieldArray<T extends FieldValues, Item extends FieldValues = FieldValues>({ control, name }: { control: Control<T>; name: string }) {
+export function useFieldArray<T extends FieldValues, Item extends FieldValues = InferredArrayItem<T>>({ control, name }: { control: Control<T>; name: string }) {
   const snapshot = useSnapshot(control); const ids: string[] = [];
   const values = computed(() => { void snapshot.value; const value = control._control.getValue(name); return Array.isArray(value) ? value as Item[] : []; });
   const newId = () => `at-field-${++fieldId}`;

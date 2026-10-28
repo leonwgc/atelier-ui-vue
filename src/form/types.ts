@@ -81,15 +81,5 @@ export interface Control<TValues extends FieldValues = FieldValues> {
   _control: FormControlInstance<TValues>;
 }
 
-export interface UseFormReturn<TValues extends FieldValues = FieldValues> {
-  register: (name: FieldPath<TValues> | string, options?: RegisterOptions<TValues>) => ReturnType<FormControlInstance<TValues>['register']>;
-  unregister: (name: FieldPath<TValues> | string, keepValue?: boolean) => void;
-  handleSubmit: FormControlInstance<TValues>['handleSubmit'];
-  watch: (name?: FieldPath<TValues> | string) => unknown;
-  setValue: (name: FieldPath<TValues> | string, value: unknown, options?: { shouldValidate?: boolean }) => void;
-  getValues: () => TValues;
-  reset: (values?: Partial<TValues>) => void;
-  trigger: (name?: FieldPath<TValues> | string) => Promise<boolean>;
-  control: Control<TValues>;
-  formState: FormState<TValues>;
-}
+export type UseFormReturn<TValues extends FieldValues = FieldValues> = ReturnType<typeof import('./index').useForm<TValues>>;
+export interface ControllerRenderProps<TValues extends FieldValues = FieldValues> { field: FieldController<TValues> & { modelValue: unknown; 'onUpdate:modelValue': (value: unknown) => void }; fieldState: { error?: FieldError; isTouched: boolean; isDirty: boolean }; formState: FormState<TValues> }

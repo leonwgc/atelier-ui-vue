@@ -1,6 +1,6 @@
 # 迁移清单
 
-原 React 库的公开运行时导出逐项记录如下。勾选代表已有 Vue 实现，不代表已完成浏览器行为验收。
+勾选代表已有 Vue 实现；验证范围记录在下方，不代表穷举全部交互状态。源项目：`~/atelier-ui`。
 
 - [x] Button
 - [x] Input
@@ -35,21 +35,21 @@
 - [x] DatePicker
 - [x] Upload
 - [x] Drawer
-- [ ] Controller
-- [ ] FormProvider
-- [ ] useFieldArray
-- [ ] useForm
-- [ ] useFormContext
-- [ ] useWatch
-- [ ] BackTop
-- [ ] FloatButton
-- [ ] FloatButtonGroup
+- [x] Controller
+- [x] FormProvider
+- [x] useFieldArray
+- [x] useForm
+- [x] useFormContext
+- [x] useWatch
+- [x] BackTop
+- [x] FloatButton
+- [x] FloatButtonGroup
 - [x] Icon
-- [ ] Link
-- [ ] Paragraph
-- [ ] Text
-- [ ] Title
-- [ ] Typography
+- [x] Link
+- [x] Paragraph
+- [x] Text
+- [x] Title
+- [x] Typography
 - [x] Flex
 - [x] Space
 - [x] Layout
@@ -59,55 +59,55 @@
 - [x] LayoutFooter
 - [x] Grid
 - [x] GridCol
-- [ ] Affix
-- [ ] Anchor
-- [ ] Dropdown
-- [ ] AutoComplete
+- [x] Affix
+- [x] Anchor
+- [x] Dropdown
+- [x] AutoComplete
 - [x] InputNumber
 - [x] Rate
 - [x] Slider
 - [x] TimePicker
-- [ ] formatTime
-- [ ] parseTime
+- [x] formatTime
+- [x] parseTime
 - [x] Segmented
 - [x] Countdown
 - [x] Statistic
-- [ ] formatCountdown
-- [ ] formatStatistic
+- [x] formatCountdown
+- [x] formatStatistic
 - [x] Image
 - [x] ImagePreviewGroup
 - [x] Popover
 - [x] Popconfirm
 - [x] Result
-- [ ] Cascader
+- [x] Cascader
 - [x] ColorPicker
-- [ ] hsvToRgb
-- [ ] parseColor
-- [ ] rgbToHsv
-- [ ] toHex
-- [ ] Mentions
-- [ ] Transfer
-- [ ] TreeSelect
-- [ ] Calendar
-- [ ] Carousel
+- [x] hsvToRgb
+- [x] parseColor
+- [x] rgbToHsv
+- [x] toHex
+- [x] Mentions
+- [x] Transfer
+- [x] TreeSelect
+- [x] Calendar
+- [x] Carousel
 - [x] List
 - [x] ListItem
 - [x] ListItemMeta
 - [x] Listy
-- [ ] Masonry
+- [x] Masonry
 - [x] QRCode
-- [ ] Menu
-- [ ] Tree
-- [ ] Tour
-- [ ] Watermark
-- [ ] Splitter
-- [ ] SplitterPanel
-- [ ] Message
-- [ ] message
-- [ ] Notification
-- [ ] notification
+- [x] Menu
+- [x] Tree
+- [x] Tour
+- [x] Watermark
+- [x] Splitter
+- [x] SplitterPanel
+- [x] Message
+- [x] message
+- [x] Notification
+- [x] notification
 - [x] ConfigProvider
-- [ ] useConfig
+- [x] useConfig
 - [x] BorderBeam
 - [x] Marquee
 - [x] NumberTicker
@@ -117,7 +117,7 @@
 - [x] SlideIn
 - [x] ScrollReveal
 - [x] ScaleIn
-- [ ] Stagger
+- [x] Stagger
 - [x] Expand
 - [x] Pulse
 - [x] Glow
@@ -130,5 +130,16 @@
 - [x] Confetti
 - [x] Shimmer
 - [x] AnimatedList
-- [ ] Transition
-- [ ] TransitionGroup
+- [x] Transition
+- [x] TransitionGroup
+
+## 本次验证（2026-10-28）
+
+- `npm run typecheck`、`npm run build` 和 `git diff --check` 已通过。
+- 111 段独立 Vue TypeScript 代码示例通过类型检查；`npm run check:examples` 可复查。
+- 根入口和 119 个子路径的 ESM / CJS / 类型文件均存在，120 个运行时入口可由 Node 加载；源项目 130 个运行时导出全部覆盖。
+- 浏览器访问生产 `docs` 的全部 94 个导航页面，110 张示例卡片均呈现，未捕获控制台警告或错误。
+- 实际操作验证表单必填与动态成员、Select 选择、Modal / confirm 关闭和焦点恢复、Tree 级联勾选及即时搜索、Transfer 移动与自定义页脚、Image 预览缩放和相册翻页、Carousel 切换、Splitter 键盘调整、TransitionGroup 增删。
+- 对照本地 React 原站检查桌面首页；98 份组件 CSS 与设计令牌逐文件一致。没有运行单元测试，也没有对每种属性组合做像素级穷举比较。
+
+演示构建输出在 `docs/`，使用相对资源路径。

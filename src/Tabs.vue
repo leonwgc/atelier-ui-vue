@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import RenderNode from './internal/RenderNode';
 import './styles/theme.css';
 import './styles/tabs.css';
 import { computed, ref } from 'vue';
-const props = defineProps<{ items: { key: string; label: string; disabled?: boolean; children?: string }[]; activeKey?: string; defaultActiveKey?: string }>();
+const props = defineProps<{ items: { key: string; label: import('vue').VNodeChild; disabled?: boolean; children?: import('vue').VNodeChild }[]; activeKey?: string; defaultActiveKey?: string }>();
 const inner = ref(props.defaultActiveKey ?? props.items.find(item => !item.disabled)?.key);
 const selected = computed(() => props.items.find(item => item.key === (props.activeKey ?? inner.value) && !item.disabled) ?? props.items.find(item => !item.disabled));
 const root = ref<HTMLElement | null>(null);
@@ -12,5 +13,5 @@ function keydown(event: KeyboardEvent) { if (!['Home', 'End', 'ArrowLeft', 'Arro
 </script>
 
 <template>
-<div ref="root" class="at-tabs"><div class="at-tabs__list" role="tablist"><button v-for="item in items" :key="item.key" type="button" role="tab" class="at-tabs__tab" :aria-selected="item.key === selected?.key" :tabindex="item.key === selected?.key ? 0 : -1" :disabled="item.disabled" @click="select(item.key)" @keydown="keydown"><slot name="label" :item="item">{{ item.label }}</slot></button></div><div v-if="selected" role="tabpanel" class="at-tabs__panel" :aria-label="selected.label"><slot :item="selected">{{ selected.children }}</slot></div></div>
+<div ref="root" class="at-tabs"><div class="at-tabs__list" role="tablist"><button v-for="item in items" :key="item.key" type="button" role="tab" class="at-tabs__tab" :aria-selected="item.key === selected?.key" :tabindex="item.key === selected?.key ? 0 : -1" :disabled="item.disabled" @click="select(item.key)" @keydown="keydown"><slot name="label" :item="item"><RenderNode :content="item.label" /></slot></button></div><div v-if="selected" role="tabpanel" class="at-tabs__panel" :aria-label="typeof selected.label === 'string' ? selected.label : '标签页内容'"><slot :item="selected"><RenderNode :content="selected.children" /></slot></div></div>
 </template>
