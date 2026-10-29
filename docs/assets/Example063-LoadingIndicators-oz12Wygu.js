@@ -1,0 +1,1 @@
+import{t as e}from"./Spin-yAqFAeS4.js";import{G as t,O as n,_ as r,m as i,v as a}from"./index-D7DP4mAo.js";var o=a({__name:`Example063-LoadingIndicators`,setup(a){return(a,o)=>(n(),i(`div`,null,[r(t(e),{size:`sm`}),r(t(e),{tip:`正在加载项目…`}),r(t(e),{size:`lg`})]))}});export{o as default};

@@ -1,0 +1,1 @@
+import{v as e}from"./index-D7DP4mAo.js";var t=e({name:`PopupContent`,props:{render:Function},setup(e,{slots:t}){return()=>{let n=t.default?.()??null;return e.render?e.render(n):n}}});export{t};

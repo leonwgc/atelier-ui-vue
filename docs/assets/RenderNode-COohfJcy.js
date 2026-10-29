@@ -1,0 +1,1 @@
+import{v as e}from"./index-D7DP4mAo.js";var t=e({name:`RenderNode`,props:{content:{type:[String,Number,Boolean,Object,Array]}},setup:e=>()=>e.content});export{t};

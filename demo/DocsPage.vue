@@ -1,21 +1,56 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { defineAsyncComponent } from 'vue';
-import navigation from './navigation.json';
+import pages from './pages.json';
+import { examples } from './examples';
+import ExampleCard from './ExampleCard.vue';
+import ApiTable from './ApiTable.vue';
+interface Page {
+  id: string;
+  title?: string;
+  description?: string;
+  eyebrow?: string;
+  group?: string;
+  badge?: string;
+  rows?: string[][];
+  examples: { title: string; description?: string; example: string | null }[];
+}
 const props = defineProps<{ id: string }>();
-const coreRoutes: Record<string, keyof typeof import('./CorePages')> = { form: 'FormPage', buttons: 'ButtonPage', inputs: 'InputPage', selection: 'SelectionPage', feedback: 'FeedbackPage', table: 'TablePage', alert: 'AlertPage', tag: 'TagPage', avatar: 'AvatarPage', tooltip: 'TooltipPage', badge: 'BadgePage', breadcrumb: 'BreadcrumbPage', divider: 'DividerPage', empty: 'EmptyPage', pagination: 'PaginationPage', progress: 'ProgressPage', skeleton: 'SkeletonPage', spin: 'SpinPage', tabs: 'TabsPage', card: 'CardPage', descriptions: 'DescriptionsPage', steps: 'StepsPage', timeline: 'TimelinePage', collapse: 'CollapsePage', datePicker: 'DatePickerPage', upload: 'UploadPage', drawer: 'DrawerPage' };
-const entryIds = new Set(['select', 'autoComplete', 'inputNumber', 'rate', 'slider', 'segmented', 'timePicker', 'colorPicker', 'mentions', 'cascader', 'treeSelect', 'transfer']);
-const displayIds = new Set(['typography', 'statistic', 'image', 'carousel', 'calendar', 'tree', 'list', 'listy', 'masonry', 'qrcode', 'watermark', 'splitter']);
-const navigationIds = new Set(['dropdown', 'menu', 'anchor', 'affix', 'tour', 'floatButton', 'popover', 'popconfirm']);
-const additionalIds = new Set(['flex', 'grid', 'icon', 'inputOTP', 'layout', 'result', 'space', 'message', 'notification', 'configProvider']);
-const animationIds = new Set(navigation.filter(item => item.group === '动画').map(item => item.id));
-const page = computed(() => defineAsyncComponent(async () => {
-  if (entryIds.has(props.id)) return (await import('./DataEntryPages')).DataEntryPage;
-  if (displayIds.has(props.id)) return (await import('./DataDisplayPages')).DataDisplayPage;
-  if (navigationIds.has(props.id)) return (await import('./NavigationPages')).NavigationPage;
-  if (additionalIds.has(props.id)) return (await import('./AdditionalPages')).AdditionalComponentPage;
-  if (animationIds.has(props.id)) return (await import('./AnimationPages')).AnimationPage;
-  return (await import('./CorePages'))[coreRoutes[props.id]];
-}));
+const page = computed<Page | undefined>(() =>
+  pages.find((item) => item.id === props.id),
+);
+function example(id: string | null) {
+  return id && id in examples
+    ? examples[id as keyof typeof examples]
+    : undefined;
+}
 </script>
-<template><component :is="page" v-bind="coreRoutes[id] ? {} : { id }" /></template>
+
+<template>
+  <template v-if="page">
+    <div class="page-heading">
+      <div class="eyebrow">
+        <span class="eyebrow__dot" />
+        {{ page.eyebrow ?? page.group?.toLocaleUpperCase() }}
+      </div>
+      <div class="page-heading__row">
+        <div>
+          <h1>{{ page.title }}</h1>
+          <p>{{ page.description }}</p>
+        </div>
+        <span class="heading-badge">
+          {{ page.badge ?? page.title?.split(' ')[0] }}
+        </span>
+      </div>
+    </div>
+    <ExampleCard
+      v-for="item in page.examples"
+      :key="item.example ?? item.title"
+      :title="item.title"
+      :description="item.description ?? undefined"
+      :code="example(item.example)?.source"
+    >
+      <component :is="example(item.example)?.component" />
+    </ExampleCard>
+    <ApiTable v-if="page.rows?.length" :rows="page.rows" />
+  </template>
+</template>

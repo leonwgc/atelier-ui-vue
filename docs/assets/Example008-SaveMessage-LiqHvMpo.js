@@ -1,0 +1,1 @@
+import{t as e}from"./feedback-6iWOD3da.js";import{G as t,O as n,R as r,f as i,g as a,n as o,v as s}from"./index-D7DP4mAo.js";var c=s({__name:`Example008-SaveMessage`,setup(s){let c=()=>e.success(`设置已保存`);return(e,s)=>(n(),i(t(o),{onClick:c},{default:r(()=>[...s[0]||=[a(`保存设置`,-1)]]),_:1}))}});export{c as default};

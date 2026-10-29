@@ -1,0 +1,1 @@
+import{t as e}from"./Breadcrumb-DkalyttG.js";import{G as t,O as n,f as r,v as i}from"./index-D7DP4mAo.js";var a=i({__name:`Example053-ProjectBreadcrumb`,setup(i){return(i,a)=>(n(),r(t(e),{items:[{title:`工作区`,href:`/`},{title:`项目列表`,href:`/projects`},{title:`品牌视觉升级`}]}))}});export{a as default};

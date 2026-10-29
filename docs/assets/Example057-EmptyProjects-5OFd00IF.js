@@ -1,0 +1,1 @@
+import{t as e}from"./Empty-B7ZMpNzM.js";import{G as t,O as n,R as r,_ as i,f as a,g as o,n as s,v as c}from"./index-D7DP4mAo.js";var l=c({__name:`Example057-EmptyProjects`,setup(c){return(c,l)=>(n(),a(t(e),{description:`还没有项目`},{default:r(()=>[i(t(s),{variant:`primary`},{default:r(()=>[...l[0]||=[o(`创建第一个项目`,-1)]]),_:1})]),_:1}))}});export{l as default};

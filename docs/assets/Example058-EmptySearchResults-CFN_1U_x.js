@@ -1,0 +1,1 @@
+import{t as e}from"./Empty-B7ZMpNzM.js";import{G as t,O as n,f as r,v as i}from"./index-D7DP4mAo.js";var a=i({__name:`Example058-EmptySearchResults`,setup(i){return(i,a)=>(n(),r(t(e),{description:`没有找到符合条件的结果`}))}});export{a as default};

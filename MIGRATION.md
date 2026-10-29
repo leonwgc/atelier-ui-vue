@@ -151,3 +151,10 @@
 - 浮层尺寸观察回调改为下一帧测量，避免连续切换页面时触发 `ResizeObserver` 循环警告；复验 Select 搜索浮层正常打开。
 - 浏览器逐一打开 94 个导航入口；其中 Input 的页面标题为“Input 输入组件”，其余页面最终均可呈现。此检查覆盖入口加载，不代表每个组件的全部属性和交互已完成对照。
 - `npm run build` 通过，包含类型检查、库构建、111 段示例的类型检查和演示站点构建。
+
+## Vue SFC 示例（2026-10-29）
+
+- 110 份独立 `.vue` 示例位于 `demo/examples/`，预览与代码面板共用源文件。
+- 文档说明和 API 存放于 `demo/pages.json`，注册表位于 `demo/examples.ts`。
+- 移除旧的 render helper 示例与自动 React 转换脚本，示例采用 Vue 3 模板、响应式状态和插槽。
+- `npm run check:examples` 编译检查全部 SFC；示例类型纳入 `npm run typecheck`。

@@ -1,6 +1,31 @@
-import { defineComponent, h } from 'vue';
-export { default as ExampleCard } from './ExampleCard.vue';
-export { default as ApiTable } from './ApiTable.vue';
-export const PageHeading = defineComponent({ name: 'PageHeading', props: { eyebrow: String, title: String, description: String, badge: String }, setup: props => () => h('div', { class: 'page-heading' }, [h('div', { class: 'eyebrow' }, [h('span', { class: 'eyebrow__dot' }), props.eyebrow]), h('div', { class: 'page-heading__row' }, [h('div', [h('h1', props.title), h('p', props.description)]), props.badge ? h('span', { class: 'heading-badge' }, props.badge) : null])]) });
-function escape(value: string) { return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;'); }
-export function highlightCode(source: string) { return source.split(/(\/\/[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b(?:import|from|export|default|const|let|function|return|async|await|true|false|null|undefined)\b|\b\d+(?:\.\d+)?\b)/g).map(token => { const kind = token.startsWith('//') ? 'comment' : /^['"]/.test(token) ? 'string' : /^(import|from|export|default|const|let|function|return|async|await|true|false|null|undefined)$/.test(token) ? 'keyword' : /^\d/.test(token) ? 'number' : ''; return kind ? `<span class="code-token--${kind}">${escape(token)}</span>` : escape(token); }).join(''); }
+function escape(value: string) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+export function highlightCode(source: string) {
+  return source
+    .split(
+      /(\/\/[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b(?:import|from|export|default|const|let|function|return|async|await|true|false|null|undefined)\b|\b\d+(?:\.\d+)?\b)/g,
+    )
+    .map((token) => {
+      const kind = token.startsWith('//')
+        ? 'comment'
+        : /^['"]/.test(token)
+          ? 'string'
+          : /^(import|from|export|default|const|let|function|return|async|await|true|false|null|undefined)$/.test(
+                token,
+              )
+            ? 'keyword'
+            : /^\d/.test(token)
+              ? 'number'
+              : '';
+      return kind
+        ? `<span class="code-token--${kind}">${escape(token)}</span>`
+        : escape(token);
+    })
+    .join('');
+}

@@ -1,0 +1,1 @@
+import{t as e}from"./Breadcrumb-DkalyttG.js";import{G as t,O as n,f as r,v as i}from"./index-D7DP4mAo.js";var a=i({__name:`Example054-CustomBreadcrumb`,setup(i){return(i,a)=>(n(),r(t(e),{separator:`›`,items:[{title:`设计团队`},{title:`品牌项目`},{title:`视觉规范`}]}))}});export{a as default};

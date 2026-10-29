@@ -1,0 +1,2297 @@
+[
+  {
+    "id": "icon",
+    "title": "Icon 图标",
+    "icon": "✦",
+    "group": "基础组件",
+    "description": "使用轻量的内联 SVG 图标表达清晰、可访问的操作含义。",
+    "rows": [
+      [
+        "name",
+        "'plus' | 'search' | 'check' | 'close' | 'arrow-right' | 'info' | 'more'",
+        "required"
+      ],
+      ["size", "number", "20"],
+      ["title", "string", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example001"
+      }
+    ]
+  },
+  {
+    "id": "flex",
+    "title": "Flex 弹性布局",
+    "icon": "↔",
+    "group": "布局组件",
+    "description": "使用常见的 Flexbox 属性快速对齐和排列内容。",
+    "rows": [
+      ["vertical", "boolean", "false"],
+      ["gap", "number | string", "12"],
+      ["align", "CSSProperties[alignItems]", "center"],
+      ["justify", "CSSProperties[justifyContent]", "flex-start"],
+      ["wrap", "boolean", "false"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example002"
+      }
+    ]
+  },
+  {
+    "id": "space",
+    "title": "Space 间距",
+    "icon": "↔",
+    "group": "布局组件",
+    "description": "为一组相邻元素提供统一、可换行的间距。",
+    "rows": [
+      ["size", "number | string", "12"],
+      ["direction", "'horizontal' | 'vertical'", "horizontal"],
+      ["wrap", "boolean", "false"],
+      ["#default", "VNodeChild / slot", "required"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example003"
+      }
+    ]
+  },
+  {
+    "id": "layout",
+    "title": "Layout 布局",
+    "icon": "▤",
+    "group": "布局组件",
+    "description": "组合页头、侧栏、内容区和页脚，搭建常见页面骨架。",
+    "rows": [
+      ["Layout", "HTMLAttributes<HTMLDivElement>", "flex container"],
+      ["LayoutHeader", "HTMLAttributes<HTMLElement>", "header region"],
+      ["LayoutSider", "width?: number | string", "220"],
+      ["LayoutContent", "HTMLAttributes<HTMLElement>", "main region"],
+      ["LayoutFooter", "HTMLAttributes<HTMLElement>", "footer region"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example004"
+      }
+    ]
+  },
+  {
+    "id": "grid",
+    "title": "Grid 栅格",
+    "icon": "▦",
+    "group": "布局组件",
+    "description": "基于 24 列的网格快速构建对齐的内容布局。",
+    "rows": [
+      ["Grid.columns", "number", "24"],
+      ["Grid.gap", "number | string", "16"],
+      ["GridCol.span", "number", "12"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example005"
+      }
+    ]
+  },
+  {
+    "id": "inputOTP",
+    "title": "InputOTP 验证码输入",
+    "icon": "▦",
+    "group": "数据录入",
+    "description": "将一次性验证码拆分为易于输入和校验的独立数字格。",
+    "rows": [
+      ["length", "number", "6"],
+      ["value / defaultValue", "string", "—"],
+      ["onChange", "(value: string) => void", "—"],
+      ["onComplete", "(value: string) => void", "—"],
+      ["disabled", "boolean", "false"],
+      ["autoFocus", "boolean", "false"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example006"
+      }
+    ]
+  },
+  {
+    "id": "result",
+    "title": "Result 结果",
+    "icon": "✓",
+    "group": "反馈组件",
+    "description": "在独立页面或任务结束后呈现清晰的状态与下一步操作。",
+    "rows": [
+      ["status", "'success' | 'error' | 'info' | 'warning' | '404' | '500'", "info"],
+      ["title", "VNodeChild / slot", "required"],
+      ["subTitle", "VNodeChild / slot", "—"],
+      ["extra", "VNodeChild / slot", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example007"
+      }
+    ]
+  },
+  {
+    "id": "message",
+    "title": "Message 全局提示",
+    "icon": "·",
+    "group": "反馈组件",
+    "description": "在页面顶部短暂展示轻量级的操作结果提示。",
+    "rows": [
+      [
+        "message.success(content, options?)",
+        "(VNodeChild, MessageOptions?) => { close }",
+        "—"
+      ],
+      [
+        "message.open(content, options?)",
+        "(VNodeChild, MessageOptions?) => { close }",
+        "info"
+      ],
+      ["duration", "number", "4000 ms"],
+      ["message.destroy()", "() => void", "关闭所有消息"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example008"
+      }
+    ]
+  },
+  {
+    "id": "notification",
+    "title": "Notification 通知提醒",
+    "icon": "▣",
+    "group": "反馈组件",
+    "description": "在屏幕角落呈现带标题和描述的详细通知卡片。",
+    "rows": [
+      ["notification.open(options)", "NotificationOptions => { close }", "—"],
+      ["title", "VNodeChild / slot", "required"],
+      ["description", "VNodeChild / slot", "—"],
+      ["type", "'success' | 'info' | 'warning' | 'error'", "info"],
+      [
+        "placement",
+        "'top-right' | 'bottom-right' | 'top-left' | 'bottom-left'",
+        "top-right"
+      ],
+      ["notification.destroy()", "() => void", "关闭所有通知"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example009"
+      }
+    ]
+  },
+  {
+    "id": "configProvider",
+    "title": "ConfigProvider 全局化配置",
+    "icon": "⚙",
+    "group": "通用组件",
+    "description": "在子树范围统一配置前缀、方向、尺寸、语言和主题变量。",
+    "rows": [
+      ["prefixCls", "string", "at"],
+      ["direction", "'ltr' | 'rtl'", "ltr"],
+      ["size", "'small' | 'middle' | 'large'", "middle"],
+      ["locale", "'zh-CN' | 'en-US'", "zh-CN"],
+      ["theme.primaryColor", "string", "—"],
+      ["theme.borderRadius", "string", "—"],
+      ["useConfig()", "UIConfig", "读取上下文"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example010"
+      }
+    ]
+  },
+  {
+    "id": "marquee",
+    "title": "Marquee 滚动展示",
+    "icon": "⇢",
+    "description": "以连续循环的轨道展示标签、动态或品牌内容。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["duration", "number", "28 秒"],
+      ["direction", "'left' | 'right'", "left"],
+      ["pauseOnHover", "boolean", "true"],
+      ["gradient", "boolean", "false"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example011"
+      }
+    ]
+  },
+  {
+    "id": "numberTicker",
+    "title": "NumberTicker 数值滚动",
+    "icon": "↗",
+    "description": "使用缓动数字递增强调统计值和关键指标。",
+    "rows": [
+      ["value", "number", "required"],
+      ["startValue", "number", "0"],
+      ["duration", "number", "1200 ms"],
+      ["delay", "number", "0 ms"],
+      ["decimals", "number", "0"],
+      ["locale", "string", "zh-CN"],
+      ["prefix / suffix", "string", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example012"
+      }
+    ]
+  },
+  {
+    "id": "typingAnimation",
+    "title": "TypingAnimation 打字效果",
+    "icon": "▏",
+    "description": "逐字输入、停顿并轮播多段短文案。",
+    "rows": [
+      ["words", "string[]", "required"],
+      ["typeSpeed", "number", "75 ms"],
+      ["deleteSpeed", "number", "38 ms"],
+      ["pauseDuration", "number", "1300 ms"],
+      ["loop", "boolean", "true"],
+      ["cursor", "boolean", "true"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example013"
+      }
+    ]
+  },
+  {
+    "id": "blurFade",
+    "title": "BlurFade 模糊渐入",
+    "icon": "◌",
+    "description": "让内容以轻微位移和模糊渐显，支持错峰延迟。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["delay", "number", "0 ms"],
+      ["duration", "number", "500 ms"],
+      ["blur", "number", "6 px"],
+      ["offsetY", "number", "8 px"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example014"
+      }
+    ]
+  },
+  {
+    "id": "fadeIn",
+    "title": "FadeIn 淡入",
+    "icon": "◦",
+    "description": "让内容以轻柔的透明度渐变进入，可配置延迟与时长。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["delay", "number", "0 ms"],
+      ["duration", "number", "500 ms"],
+      ["HTML attributes", "HTMLAttributes<HTMLDivElement>", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example015"
+      }
+    ]
+  },
+  {
+    "id": "slideIn",
+    "title": "SlideIn 滑入",
+    "icon": "⇲",
+    "description": "让内容从指定方向平滑滑入，同时淡入显示。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["direction", "'left' | 'right' | 'up' | 'down'", "up"],
+      ["distance", "number", "16 px"],
+      ["delay", "number", "0 ms"],
+      ["duration", "number", "500 ms"],
+      ["HTML attributes", "HTMLAttributes<HTMLDivElement>", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example016"
+      }
+    ]
+  },
+  {
+    "id": "scrollReveal",
+    "title": "ScrollReveal 滚动显现",
+    "icon": "⌄",
+    "description": "元素进入视口时渐入，可选择方向、距离及是否重复触发。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["direction", "'left' | 'right' | 'up' | 'down'", "up"],
+      ["distance", "number", "16 px"],
+      ["delay / duration", "number", "0 / 600 ms"],
+      ["threshold", "number", "0.1"],
+      ["rootMargin", "string", "0px"],
+      ["once", "boolean", "true"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example017"
+      }
+    ]
+  },
+  {
+    "id": "scaleIn",
+    "title": "ScaleIn 缩放弹入",
+    "icon": "⊙",
+    "description": "内容从较小比例平滑放大并淡入，适用于卡片、弹窗和菜单。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["startScale", "number", "0.88"],
+      ["delay", "number", "0 ms"],
+      ["duration", "number", "450 ms"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example018"
+      }
+    ]
+  },
+  {
+    "id": "stagger",
+    "title": "Stagger 错峰动画",
+    "icon": "☷",
+    "description": "以错峰顺序呈现任意子元素，适合标签、卡片和列表内容。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["staggerDelay", "number", "70 ms"],
+      ["duration", "number", "420 ms"],
+      ["itemClassName", "string", "—"],
+      ["HTML attributes", "HTMLAttributes<HTMLDivElement>", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example019"
+      }
+    ]
+  },
+  {
+    "id": "expand",
+    "title": "Expand 平滑展开",
+    "icon": "⌄",
+    "description": "对受控内容进行平滑展开与收起，并隐藏折叠内容的辅助技术焦点。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["open", "boolean", "required"],
+      ["duration", "number", "300 ms"],
+      ["HTML attributes", "HTMLAttributes<HTMLDivElement>", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example020"
+      }
+    ]
+  },
+  {
+    "id": "pulse",
+    "title": "Pulse 呼吸",
+    "icon": "◉",
+    "description": "以柔和的循环缩放和透明度变化强调需要关注的内容。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["duration", "number", "1400 ms"],
+      ["HTML attributes", "HTMLAttributes<HTMLDivElement>", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example021"
+      }
+    ]
+  },
+  {
+    "id": "glow",
+    "title": "Glow 柔光",
+    "icon": "✧",
+    "description": "在内容周围循环显示柔和光晕，可自定义颜色与速度。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["color", "string", "#8b7dff"],
+      ["duration", "number", "1800 ms"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example022"
+      }
+    ]
+  },
+  {
+    "id": "shake",
+    "title": "Shake 震动反馈",
+    "icon": "↔",
+    "description": "通过短促的水平抖动反馈错误或无效操作，可用 active 重新触发。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["active", "boolean", "true"],
+      ["duration", "number", "650 ms"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example023"
+      }
+    ]
+  },
+  {
+    "id": "wobble",
+    "title": "Wobble 摇摆反馈",
+    "icon": "↝",
+    "description": "以轻微旋转摆动吸引注意，可用 active 控制播放与重播。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["active", "boolean", "true"],
+      ["duration", "number", "900 ms"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example024"
+      }
+    ]
+  },
+  {
+    "id": "hoverLift",
+    "title": "HoverLift 悬停抬升",
+    "icon": "⌃",
+    "description": "鼠标悬停时轻微上浮，常用于卡片和可点击内容。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["lift", "number", "6 px"],
+      ["duration", "number", "500 ms"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example025"
+      }
+    ]
+  },
+  {
+    "id": "press",
+    "title": "Press 按压反馈",
+    "icon": "●",
+    "description": "指针按下时轻微缩小，提供即时的交互反馈。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["duration", "number", "500 ms"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example026"
+      }
+    ]
+  },
+  {
+    "id": "flipIn",
+    "title": "FlipIn 翻转进入",
+    "icon": "⟳",
+    "description": "内容以 3D 翻转并淡入，可选择绕 X 或 Y 轴旋转。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["direction", "'x' | 'y'", "y"],
+      ["delay", "number", "0 ms"],
+      ["duration", "number", "600 ms"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example027"
+      }
+    ]
+  },
+  {
+    "id": "flipCard",
+    "title": "FlipCard 翻转卡片",
+    "icon": "▣",
+    "description": "通过外部状态控制卡片正反面翻转。",
+    "rows": [
+      ["front / back", "VNodeChild / slot", "required"],
+      ["flipped", "boolean", "false"],
+      ["direction", "'horizontal' | 'vertical'", "horizontal"],
+      ["HTML attributes", "HTMLAttributes<HTMLDivElement>", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example028"
+      }
+    ]
+  },
+  {
+    "id": "confetti",
+    "title": "Confetti 庆祝粒子",
+    "icon": "✳",
+    "description": "在内容周围播放轻量庆祝粒子，支持数量、颜色与时长。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "optional"],
+      ["active", "boolean", "true"],
+      ["count", "number", "24"],
+      ["duration", "number", "1800 ms"],
+      ["colors", "string[]", "内置配色"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example029"
+      }
+    ]
+  },
+  {
+    "id": "shimmer",
+    "title": "Shimmer 流光",
+    "icon": "✧",
+    "description": "为内容表面添加柔和的掠光效果，可自定义高光颜色。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["duration", "number", "1800 ms"],
+      ["highlight", "string", "半透明白色"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example030"
+      }
+    ]
+  },
+  {
+    "id": "animatedList",
+    "title": "AnimatedList 列表渐入",
+    "icon": "☷",
+    "description": "以错峰渐入动画呈现动态列表内容。",
+    "rows": [
+      ["items", "VNodeChild[] | T[]", "required"],
+      [
+        "renderItem",
+        "(item: T, index: number) => VNodeChild",
+        "自定义结构化数据的列表项"
+      ],
+      ["getItemKey", "(item: T, index: number) => Key", "—"],
+      ["staggerDelay", "number", "70 ms"],
+      ["duration", "number", "420 ms"],
+      ["itemClassName", "string", "—"],
+      ["HTML attributes", "HTMLAttributes<HTMLUListElement>", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example031"
+      }
+    ]
+  },
+  {
+    "id": "transition",
+    "title": "Transition 单项过渡",
+    "icon": "↕",
+    "description": "为条件显示的面板或内容提供统一的进入、退出生命周期。",
+    "rows": [
+      ["in", "boolean", "true"],
+      ["animation", "'fade' | 'slide-up' | 'collapse' | 'none'", "fade"],
+      ["timeout", "number", "200 ms"],
+      ["appear", "boolean", "false"],
+      ["mountOnEnter / unmountOnExit", "boolean", "true"],
+      ["exit", "VNodeChild / slot", "#default"],
+      ["classNames", "string | Partial<Record<TransitionStatus, string>>", "—"],
+      ["onEnter / onEntered", "(node: HTMLDivElement) => void", "—"],
+      ["onExit / onExited", "(node: HTMLDivElement) => void", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example032"
+      }
+    ]
+  },
+  {
+    "id": "transitionGroup",
+    "title": "TransitionGroup 动态项过渡",
+    "icon": "⇅",
+    "description": "按稳定 key 管理子项增删；表单数据立即变化，退场项仅保留视觉快照。",
+    "rows": [
+      ["#default", "keyed Transition elements", "required"],
+      ["class", "string", "—"],
+      ["exit snapshot", "Transition.exit: VNodeChild", "optional"],
+      ["removal", "data is removed immediately", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example033"
+      }
+    ]
+  },
+  {
+    "id": "borderBeam",
+    "title": "BorderBeam 边框流光",
+    "icon": "✧",
+    "description": "为重点内容添加可控颜色和速度的流动边框。",
+    "rows": [
+      ["#default", "VNodeChild / slot", "required"],
+      ["color", "string", "#8b7dff"],
+      ["duration", "number", "5 秒"],
+      ["paused", "boolean", "false"],
+      ["class", "string", "—"]
+    ],
+    "examples": [
+      {
+        "title": "交互示例",
+        "example": "Example034"
+      }
+    ]
+  },
+  {
+    "id": "form",
+    "examples": [
+      {
+        "title": "创建工作区",
+        "description": "结合注册字段、受控 Select、动态成员列表与提交状态。",
+        "example": "Example035"
+      }
+    ],
+    "rows": [],
+    "eyebrow": "FORM MANAGEMENT",
+    "title": "Form Hooks",
+    "description": "以 Hooks 管理表单状态、校验与提交。用原生 form 组织界面，让数据流保持清晰。",
+    "badge": "Hook-first API"
+  },
+  {
+    "id": "buttons",
+    "examples": [
+      {
+        "title": "按钮类型",
+        "description": "根据操作的重要程度，选择合适的视觉权重。",
+        "example": "Example036"
+      },
+      {
+        "title": "尺寸与状态",
+        "description": "提供三种尺寸，并支持加载和禁用状态。",
+        "example": "Example037"
+      },
+      {
+        "title": "交互示例",
+        "description": "点击按钮体验异步加载状态。",
+        "example": "Example038"
+      }
+    ],
+    "rows": [
+      ["variant", "primary | secondary | tertiary | danger | ghost", "secondary"],
+      ["size", "sm | md | lg", "md"],
+      ["loading", "boolean", "false"],
+      ["fullWidth", "boolean", "false"],
+      ["icon", "VNodeChild / slot", "—"]
+    ],
+    "eyebrow": "FOUNDATIONS",
+    "title": "Button 按钮",
+    "description": "清楚表达操作优先级，在需要的时候给出恰到好处的反馈。",
+    "badge": "Button"
+  },
+  {
+    "id": "inputs",
+    "examples": [
+      {
+        "title": "Input 输入框",
+        "description": "支持标签、提示、错误状态、前后缀和清空操作。",
+        "example": "Example039"
+      },
+      {
+        "title": "Textarea 多行输入",
+        "description": "适合备注、描述等较长内容。",
+        "example": "Example040"
+      }
+    ],
+    "rows": [
+      ["label", "string", "—"],
+      ["hint / error", "string", "—"],
+      ["prefix / suffix", "VNodeChild / slot", "—"],
+      ["clearable", "boolean", "false"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["rows", "number", "3"]
+    ],
+    "eyebrow": "DATA ENTRY",
+    "title": "Input 输入组件",
+    "description": "为文本与多行内容提供清晰、友好的输入体验。",
+    "badge": "Input · Textarea"
+  },
+  {
+    "id": "selection",
+    "examples": [
+      {
+        "title": "Checkbox 多选",
+        "description": "独立复选和分组选项都支持受控状态。",
+        "example": "Example041"
+      },
+      {
+        "title": "Radio 单选",
+        "description": "在一组选项中选择一个明确的值。",
+        "example": "Example042"
+      },
+      {
+        "title": "Switch 开关",
+        "description": "用于立即生效的二元设置。",
+        "example": "Example043"
+      }
+    ],
+    "rows": [],
+    "eyebrow": "DATA ENTRY",
+    "title": "选择组件",
+    "description": "Checkbox、Radio 与 Switch，覆盖多选、单选和即时开关状态。",
+    "badge": "Checkbox · Radio · Switch"
+  },
+  {
+    "id": "feedback",
+    "examples": [
+      {
+        "title": "受控 Modal",
+        "description": "用于确认、编辑或承载需要专注完成的短流程。",
+        "example": "Example044"
+      },
+      {
+        "title": "命令式确认",
+        "description": "删除、归档等需要明确确认的破坏性操作。",
+        "example": "Example045"
+      }
+    ],
+    "rows": [
+      ["open", "boolean", "—"],
+      ["onClose", "() => void", "—"],
+      ["onOk", "() => void | Promise<void>", "—"],
+      ["maskClosable", "boolean", "true"],
+      ["closeOnEscape", "boolean", "true"],
+      ["Modal.confirm", "ConfirmOptions → { destroy }", "—"]
+    ],
+    "eyebrow": "FEEDBACK",
+    "title": "Modal 弹窗",
+    "description": "在需要聚焦重要决策时出现，不打断用户理解当前上下文。",
+    "badge": "Modal"
+  },
+  {
+    "id": "table",
+    "examples": [
+      {
+        "title": "项目列表",
+        "description": "本地分页、排序、筛选与行选择。",
+        "example": "Example046"
+      },
+      {
+        "title": "服务端分页模式",
+        "description": "通过受控模式将分页和筛选交给业务请求。",
+        "example": "Example047"
+      }
+    ],
+    "rows": [],
+    "eyebrow": "DATA DISPLAY",
+    "title": "Table 表格",
+    "description": "结构化呈现数据，并将排序、筛选和选择等操作保持在用户视线之内。",
+    "badge": "Table"
+  },
+  {
+    "id": "alert",
+    "examples": [
+      {
+        "title": "提示类型",
+        "description": "提供信息、成功、警告和错误四种状态。",
+        "example": "Example048"
+      }
+    ],
+    "rows": [
+      ["variant", "info | success | warning | error", "info"],
+      ["title", "VNodeChild / slot", "—"],
+      ["closable", "boolean", "false"],
+      ["onClose", "() => void", "—"]
+    ],
+    "eyebrow": "FEEDBACK",
+    "title": "Alert 提示",
+    "description": "用语义化状态表达成功、提醒和错误信息。",
+    "badge": "Alert"
+  },
+  {
+    "id": "tag",
+    "examples": [
+      {
+        "title": "标签类型",
+        "description": "用颜色区分标签的语义和优先级。",
+        "example": "Example049"
+      }
+    ],
+    "rows": [
+      ["variant", "neutral | primary | success | warning | danger", "neutral"],
+      ["closable", "boolean", "false"],
+      ["onClose", "() => void", "—"]
+    ],
+    "eyebrow": "DATA DISPLAY",
+    "title": "Tag 标签",
+    "description": "为状态、分类和筛选条件提供紧凑标记。",
+    "badge": "Tag"
+  },
+  {
+    "id": "avatar",
+    "examples": [
+      {
+        "title": "头像尺寸与回退",
+        "description": "提供多种尺寸；图片无法加载时显示姓名标记。",
+        "example": "Example050"
+      }
+    ],
+    "rows": [
+      ["src", "string", "—"],
+      ["alt / name", "string", "—"],
+      ["size", "sm | md | lg", "md"]
+    ],
+    "eyebrow": "DATA DISPLAY",
+    "title": "Avatar 头像",
+    "description": "展示成员身份，并在图片不可用时使用姓名首字母。",
+    "badge": "Avatar"
+  },
+  {
+    "id": "tooltip",
+    "examples": [
+      {
+        "title": "提示位置",
+        "description": "可将提示放在触发元素的上、下、左或右侧。",
+        "example": "Example051"
+      }
+    ],
+    "rows": [
+      ["title", "VNodeChild / slot", "required"],
+      ["placement", "top | bottom | left | right", "top"],
+      ["#default", "VNodeChild / slot", "required"]
+    ],
+    "eyebrow": "FEEDBACK",
+    "title": "Tooltip 文字提示",
+    "description": "悬停或键盘聚焦时显示简短补充说明。",
+    "badge": "Tooltip"
+  },
+  {
+    "id": "badge",
+    "examples": [
+      {
+        "title": "数量与状态",
+        "description": "支持数字上限、红点和语义状态。",
+        "example": "Example052"
+      }
+    ],
+    "rows": [
+      ["count", "VNodeChild / slot", "—"],
+      ["dot", "boolean", "false"],
+      ["overflowCount", "number", "99"],
+      ["showZero", "boolean", "false"],
+      ["status", "default | success | processing | warning | error", "default"],
+      ["text", "VNodeChild / slot", "—"]
+    ],
+    "eyebrow": "DATA DISPLAY",
+    "title": "Badge 徽标",
+    "description": "在图标、头像等元素旁呈现数量或状态提醒。",
+    "badge": "Badge"
+  },
+  {
+    "id": "breadcrumb",
+    "examples": [
+      {
+        "title": "页面路径",
+        "description": "通过 href 或 onClick 为上级路径提供导航行为。",
+        "example": "Example053"
+      },
+      {
+        "title": "自定义分隔符",
+        "description": "分隔符可以是文本或任意 React 节点。",
+        "example": "Example054"
+      }
+    ],
+    "rows": [
+      ["items", "BreadcrumbItem[]", "required"],
+      ["items[].title", "VNodeChild / slot", "required"],
+      ["items[].href", "string", "—"],
+      ["items[].onClick", "() => void", "—"],
+      ["separator", "VNodeChild / slot", "'/ '"]
+    ],
+    "eyebrow": "NAVIGATION",
+    "title": "Breadcrumb 面包屑",
+    "description": "展示当前位置，并帮助用户快速返回上级页面。",
+    "badge": "Breadcrumb"
+  },
+  {
+    "id": "divider",
+    "examples": [
+      {
+        "title": "水平分割",
+        "description": "支持普通线、虚线与带标题分割线。",
+        "example": "Example055"
+      },
+      {
+        "title": "垂直分割",
+        "example": "Example056"
+      }
+    ],
+    "rows": [
+      ["orientation", "horizontal | vertical", "horizontal"],
+      ["dashed", "boolean", "false"],
+      ["plain", "boolean", "false"],
+      ["#default", "VNodeChild / slot", "—"]
+    ],
+    "eyebrow": "FOUNDATIONS",
+    "title": "Divider 分割线",
+    "description": "分隔相邻内容，或为相关信息添加轻量标题。",
+    "badge": "Divider"
+  },
+  {
+    "id": "empty",
+    "examples": [
+      {
+        "title": "带操作的空状态",
+        "description": "提供下一步操作，帮助用户从空白状态继续。",
+        "example": "Example057"
+      },
+      {
+        "title": "自定义描述",
+        "example": "Example058"
+      }
+    ],
+    "rows": [
+      ["description", "VNodeChild / slot", "暂无数据"],
+      ["image", "VNodeChild / slot", "默认插画"],
+      ["#default", "VNodeChild / slot", "—"]
+    ],
+    "eyebrow": "FEEDBACK",
+    "title": "Empty 空状态",
+    "description": "在列表、搜索或数据面板中清楚说明当前没有内容。",
+    "badge": "Empty"
+  },
+  {
+    "id": "pagination",
+    "examples": [
+      {
+        "title": "分页与每页条数",
+        "description": "支持受控页码、总数提示及每页条数切换。",
+        "example": "Example059"
+      }
+    ],
+    "rows": [
+      ["current", "number", "required"],
+      ["pageSize", "number", "required"],
+      ["total", "number", "required"],
+      ["onChange", "(page, pageSize) => void", "required"],
+      ["showSizeChanger", "boolean", "false"],
+      ["pageSizeOptions", "number[]", "[10, 20, 50]"]
+    ],
+    "eyebrow": "NAVIGATION",
+    "title": "Pagination 分页",
+    "description": "将长列表拆分为清晰、可浏览的数据页。",
+    "badge": "Pagination"
+  },
+  {
+    "id": "progress",
+    "examples": [
+      {
+        "title": "进度与状态",
+        "description": "百分比会限制在 0 至 100，并支持自定义文案和颜色。",
+        "example": "Example060"
+      }
+    ],
+    "rows": [
+      ["percent", "number", "required"],
+      ["status", "normal | active | success | exception", "自动判断"],
+      ["showInfo", "boolean", "true"],
+      ["strokeColor", "string", "主题色"],
+      ["label", "VNodeChild / slot", "百分比"]
+    ],
+    "eyebrow": "FEEDBACK",
+    "title": "Progress 进度条",
+    "description": "用进度和状态让长时间任务保持可见。",
+    "badge": "Progress"
+  },
+  {
+    "id": "skeleton",
+    "examples": [
+      {
+        "title": "动态骨架",
+        "description": "支持头像、标题和可配置行数。",
+        "example": "Example061"
+      },
+      {
+        "title": "简洁占位",
+        "example": "Example062"
+      }
+    ],
+    "rows": [
+      ["active", "boolean", "false"],
+      ["avatar", "boolean", "false"],
+      ["title", "boolean", "true"],
+      ["paragraph", "boolean | { rows?: number }", "true"]
+    ],
+    "eyebrow": "FEEDBACK",
+    "title": "Skeleton 骨架屏",
+    "description": "内容加载时先展示结构轮廓，减少页面跳动。",
+    "badge": "Skeleton"
+  },
+  {
+    "id": "spin",
+    "examples": [
+      {
+        "title": "独立加载指示器",
+        "description": "提供三种尺寸和可选说明。",
+        "example": "Example063"
+      },
+      {
+        "title": "局部内容加载",
+        "description": "可以遮罩一个容器，保留上下文。",
+        "example": "Example064"
+      }
+    ],
+    "rows": [
+      ["spinning", "boolean", "true"],
+      ["size", "sm | md | lg", "md"],
+      ["tip", "VNodeChild / slot", "—"],
+      ["#default", "VNodeChild / slot", "—"]
+    ],
+    "eyebrow": "FEEDBACK",
+    "title": "Spin 加载中",
+    "description": "在请求或局部内容更新期间提供轻量加载反馈。",
+    "badge": "Spin"
+  },
+  {
+    "id": "tabs",
+    "examples": [
+      {
+        "title": "受控标签页",
+        "description": "支持受控或默认选中，并提供键盘方向键切换。",
+        "example": "Example065"
+      }
+    ],
+    "rows": [
+      ["items", "TabItem[]", "required"],
+      ["items[].key", "string", "required"],
+      ["items[].label", "VNodeChild / slot", "required"],
+      ["items[].children", "VNodeChild / slot", "required"],
+      ["activeKey", "string", "非受控"],
+      ["onChange", "(key) => void", "—"]
+    ],
+    "eyebrow": "NAVIGATION",
+    "title": "Tabs 标签页",
+    "description": "在同一页面内切换相互关联的内容视图。",
+    "badge": "Tabs"
+  },
+  {
+    "id": "card",
+    "examples": [
+      {
+        "title": "带标题与操作的卡片",
+        "description": "支持标题、辅助操作和悬停反馈。",
+        "example": "Example066"
+      }
+    ],
+    "rows": [
+      ["title", "VNodeChild / slot", "—"],
+      ["extra", "VNodeChild / slot", "—"],
+      ["hoverable", "boolean", "false"],
+      ["bordered", "boolean", "true"],
+      ["#default", "VNodeChild / slot", "—"]
+    ],
+    "eyebrow": "FOUNDATIONS",
+    "title": "Card 卡片",
+    "description": "将相关内容、操作和信息组织在独立容器中。",
+    "badge": "Card"
+  },
+  {
+    "id": "descriptions",
+    "examples": [
+      {
+        "title": "项目详情",
+        "description": "支持自适应列数和边框布局。",
+        "example": "Example067"
+      }
+    ],
+    "rows": [
+      ["items", "DescriptionItem[]", "required"],
+      ["items[].key", "string", "required"],
+      ["items[].label", "VNodeChild / slot", "required"],
+      ["items[].children", "VNodeChild / slot", "required"],
+      ["column", "number", "3"],
+      ["bordered", "boolean", "false"]
+    ],
+    "eyebrow": "DATA DISPLAY",
+    "title": "Descriptions 描述列表",
+    "description": "以标签和值的形式展示对象属性和详情信息。",
+    "badge": "Descriptions"
+  },
+  {
+    "id": "steps",
+    "examples": [
+      {
+        "title": "可交互步骤",
+        "description": "点击步骤切换当前进度，也可仅展示只读状态。",
+        "example": "Example068"
+      }
+    ],
+    "rows": [
+      ["items", "StepItem[]", "required"],
+      ["current", "number", "0"],
+      ["direction", "horizontal | vertical", "horizontal"],
+      ["onChange", "(step) => void", "—"],
+      ["items[].status", "wait | process | finish | error", "自动计算"]
+    ],
+    "eyebrow": "NAVIGATION",
+    "title": "Steps 步骤条",
+    "description": "展示多阶段流程的进度，并帮助用户理解当前步骤。",
+    "badge": "Steps"
+  },
+  {
+    "id": "timeline",
+    "examples": [
+      {
+        "title": "项目动态",
+        "description": "支持时间标记、节点颜色和待处理项。",
+        "example": "Example069"
+      }
+    ],
+    "rows": [
+      ["items", "TimelineItem[]", "required"],
+      ["items[].key", "string", "required"],
+      ["items[].content", "VNodeChild / slot", "required"],
+      ["items[].label", "VNodeChild / slot", "—"],
+      ["items[].color", "string", "主题色"],
+      ["pending", "VNodeChild / slot", "—"]
+    ],
+    "eyebrow": "DATA DISPLAY",
+    "title": "Timeline 时间轴",
+    "description": "按时间顺序呈现活动、变更和事件记录。",
+    "badge": "Timeline"
+  },
+  {
+    "id": "collapse",
+    "examples": [
+      {
+        "title": "手风琴面板",
+        "description": "手风琴模式下同一时间只展开一项。",
+        "example": "Example070"
+      }
+    ],
+    "rows": [
+      ["items", "CollapseItem[]", "required"],
+      ["accordion", "boolean", "false"],
+      ["activeKey", "string | string[]", "非受控"],
+      ["defaultActiveKey", "string | string[]", "—"],
+      ["onChange", "(activeKey) => void", "—"]
+    ],
+    "eyebrow": "DATA DISPLAY",
+    "title": "Collapse 折叠面板",
+    "description": "按需展开内容，保持长页面结构简洁。",
+    "badge": "Collapse"
+  },
+  {
+    "id": "datePicker",
+    "examples": [
+      {
+        "title": "发布日期",
+        "description": "保留原生键盘与平台日期选择交互。",
+        "example": "Example071"
+      }
+    ],
+    "rows": [
+      ["label", "VNodeChild / slot", "—"],
+      ["hint / error", "VNodeChild / slot", "—"],
+      ["value / defaultValue", "string", "—"],
+      ["min / max", "string", "—"],
+      ["disabled", "boolean", "false"],
+      ["onChange", "ChangeEvent<HTMLInputElement>", "—"]
+    ],
+    "eyebrow": "DATA ENTRY",
+    "title": "DatePicker 日期选择",
+    "description": "使用浏览器原生日期控件输入和选择日期。",
+    "badge": "DatePicker"
+  },
+  {
+    "id": "upload",
+    "examples": [
+      {
+        "title": "项目附件",
+        "description": "支持文件类型过滤、多选、拖放和移除已选文件。",
+        "example": "Example072"
+      }
+    ],
+    "rows": [
+      ["accept", "string", "—"],
+      ["multiple", "boolean", "false"],
+      ["disabled", "boolean", "false"],
+      ["onChange", "(files: File[]) => void", "—"]
+    ],
+    "eyebrow": "DATA ENTRY",
+    "title": "Upload 上传",
+    "description": "通过选择文件或拖放文件，将本地内容接入业务流程。",
+    "badge": "Upload"
+  },
+  {
+    "id": "drawer",
+    "examples": [
+      {
+        "title": "项目详情抽屉",
+        "description": "支持左右方向、遮罩关闭和 Escape 关闭。",
+        "example": "Example073"
+      }
+    ],
+    "rows": [
+      ["open", "boolean", "required"],
+      ["title", "VNodeChild / slot", "—"],
+      ["placement", "left | right", "right"],
+      ["width", "number | string", "420"],
+      ["onClose", "() => void", "required"],
+      ["maskClosable / closeOnEscape", "boolean", "true"]
+    ],
+    "eyebrow": "FEEDBACK",
+    "title": "Drawer 抽屉",
+    "description": "从页面边缘展示辅助内容，同时保留当前页面上下文。",
+    "badge": "Drawer"
+  },
+  {
+    "id": "typography",
+    "title": "Typography 排版",
+    "icon": "T",
+    "group": "基础组件",
+    "eyebrow": "GENERAL",
+    "badge": "Typography",
+    "description": "标题、段落、文本与链接的统一排版，支持复制、编辑、省略展开与多种语义样式。",
+    "examples": [
+      {
+        "title": "标题、文本样式、复制、编辑与省略",
+        "example": "Example074"
+      }
+    ],
+    "rows": [
+      ["Title.level", "1 | 2 | 3 | 4 | 5", "1"],
+      ["type", "'secondary' | 'success' | 'warning' | 'danger'", "—"],
+      ["strong / italic / underline / delete", "boolean", "false"],
+      ["code / keyboard / mark", "boolean", "false"],
+      ["disabled", "boolean", "false"],
+      ["copyable", "boolean | { text?, onCopy?, tooltips? }", "false"],
+      [
+        "editable",
+        "boolean | { editing?, onStart?, onChange?, onCancel?, onEnd?, maxLength? }",
+        "false"
+      ],
+      [
+        "ellipsis",
+        "boolean | { rows?, expandable?, symbol?, onExpand?, tooltip? }",
+        "false"
+      ],
+      ["Link.href / target", "string", "—"],
+      ["Typography.as", "'article' | 'section' | 'div'", "'article'"]
+    ]
+  },
+  {
+    "id": "statistic",
+    "title": "Statistic 统计数值",
+    "icon": "↗",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Statistic",
+    "description": "突出展示关键指标，支持千分位、精度、前后缀、趋势标识、加载骨架以及倒计时。",
+    "examples": [
+      {
+        "title": "数值、趋势与倒计时",
+        "example": "Example075"
+      }
+    ],
+    "rows": [
+      ["title", "VNodeChild / slot", "—"],
+      ["value", "number | string", "required"],
+      ["precision", "number", "—"],
+      ["groupSeparator / decimalSeparator", "string", "',' / '.'"],
+      ["prefix / suffix", "VNodeChild / slot", "—"],
+      ["formatter", "(value) => VNodeChild", "—"],
+      ["loading", "boolean", "false"],
+      ["trend", "'up' | 'down'", "—"],
+      ["trendLabel", "VNodeChild / slot", "—"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["valueStyle", "CSSProperties", "—"],
+      ["Countdown.value", "number | Date", "required"],
+      ["Countdown.format", "string（D / H / m / s / S）", "'HH:mm:ss'"],
+      ["Countdown.onFinish / onChange", "() => void / (ms) => void", "—"]
+    ]
+  },
+  {
+    "id": "image",
+    "title": "Image 图片",
+    "icon": "▧",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Image",
+    "description": "带骨架占位、失败回退与全屏预览的图片组件，预览支持缩放、旋转、翻转、拖拽与相册切换。",
+    "examples": [
+      {
+        "title": "占位、回退与相册预览",
+        "description": "点击任意图片打开预览层；相册内可用 ← → 切换，滚轮缩放，Esc 关闭。",
+        "example": "Example076"
+      }
+    ],
+    "rows": [
+      ["src", "string", "required"],
+      ["alt", "string", "''"],
+      ["preview", "boolean | { src?, mask?, visible?, onVisibleChange? }", "true"],
+      ["fallback", "string", "—"],
+      ["placeholder", "boolean | VNodeChild", "true"],
+      ["fit", "CSS object-fit", "'cover'"],
+      ["rounded", "boolean | number", "true"],
+      ["loading", "'lazy' | 'eager'", "'lazy'"],
+      ["onPreviewOpen", "() => void", "—"],
+      ["PreviewGroup.items", "Array<string | { src, previewSrc? }>", "子元素自动收集"],
+      ["PreviewGroup.current / onChange", "number / (index) => void", "—"],
+      ["PreviewGroup.visible / onVisibleChange", "boolean / (visible) => void", "—"]
+    ]
+  },
+  {
+    "id": "carousel",
+    "title": "Carousel 走马灯",
+    "icon": "▭",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Carousel",
+    "description": "滑动 / 淡入两种切换效果，支持自动播放（悬停暂停）、拖拽、箭头、指示点位置与命令式控制。",
+    "examples": [
+      {
+        "title": "自动播放、拖拽、淡入与非循环",
+        "example": "Example077"
+      }
+    ],
+    "rows": [
+      ["children / items", "VNodeChild / VNodeChild[]", "—"],
+      ["autoplay", "boolean", "false"],
+      ["autoplaySpeed", "number (ms)", "4000"],
+      ["pauseOnHover", "boolean", "true"],
+      ["effect", "'slide' | 'fade'", "'slide'"],
+      ["dots", "boolean", "true"],
+      ["dotPosition", "'bottom' | 'top' | 'left' | 'right'", "'bottom'"],
+      ["arrows", "boolean", "false"],
+      ["infinite", "boolean", "true"],
+      ["draggable", "boolean", "true"],
+      ["speed", "number (ms)", "450"],
+      ["current / defaultCurrent", "number", "— / 0"],
+      ["onChange / beforeChange / afterChange", "(index) => void", "—"],
+      ["aspectRatio", "number", "—"],
+      ["ref", "{ next, prev, goTo }", "—"]
+    ]
+  },
+  {
+    "id": "calendar",
+    "title": "Calendar 日历",
+    "icon": "▦",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Calendar",
+    "description": "月 / 年两种面板，支持全屏日程单元格、紧凑卡片、禁用日期、有效范围与完整键盘导航。",
+    "examples": [
+      {
+        "title": "全屏日程与紧凑卡片",
+        "description": "方向键移动焦点，PageUp / PageDown 切换月份，Enter 选择。",
+        "example": "Example078"
+      }
+    ],
+    "rows": [
+      ["value / defaultValue", "Date", "— / 今天"],
+      ["onChange", "(date) => void", "—"],
+      ["onSelect", "(date, { source }) => void", "—"],
+      ["onPanelChange", "(date, mode) => void", "—"],
+      ["mode / defaultMode", "'month' | 'year'", "— / 'month'"],
+      ["fullscreen", "boolean", "true"],
+      ["cellRender", "(date, info) => VNodeChild", "—"],
+      ["disabledDate", "(date) => boolean", "—"],
+      ["validRange", "[Date, Date]", "—"],
+      ["firstDayOfWeek", "0 | 1", "1"],
+      ["weekdayLabels", "string[]", "日一二三四五六"],
+      ["showToday", "boolean", "true"],
+      ["headerRender", "(info) => VNodeChild", "—"]
+    ]
+  },
+  {
+    "id": "tree",
+    "title": "Tree 树形控件",
+    "icon": "⋮",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Tree",
+    "description": "层级数据的展开、选择与级联勾选，支持连线、图标、搜索高亮、异步加载与键盘导航。",
+    "examples": [
+      {
+        "title": "可勾选、连线 + 图标、搜索与异步加载",
+        "description": "左侧为级联勾选；右侧输入关键字会高亮并自动展开，“归档”节点在展开时异步加载子节点。",
+        "example": "Example079"
+      }
+    ],
+    "rows": [
+      ["treeData", "TreeNode[]", "required"],
+      ["checkable / checkStrictly", "boolean", "false"],
+      ["selectable / multiple", "boolean", "true / false"],
+      [
+        "expandedKeys / defaultExpandedKeys / defaultExpandAll",
+        "string[] / string[] / boolean",
+        "—"
+      ],
+      ["onExpand", "(keys, { expanded, node }) => void", "—"],
+      ["selectedKeys / defaultSelectedKeys", "string[]", "—"],
+      ["onSelect", "(keys, { selected, node }) => void", "—"],
+      ["checkedKeys / defaultCheckedKeys", "string[]", "—"],
+      ["onCheck", "(keys, { checked, node, halfCheckedKeys }) => void", "—"],
+      ["showLine / showIcon", "boolean", "false"],
+      ["icon", "VNodeChild | (node, { expanded, leaf }) => VNodeChild", "—"],
+      ["switcherIcon", "VNodeChild / slot", "›"],
+      ["titleRender", "(node) => VNodeChild", "—"],
+      ["filterValue", "string", "—"],
+      ["loadData", "(node) => Promise<void>", "—"],
+      ["expandAction", "'click' | false", "false"],
+      ["blockNode", "boolean", "false"],
+      [
+        "TreeNode",
+        "{ key, title, children?, disabled?, disableCheckbox?, selectable?, checkable?, icon?, isLeaf? }",
+        "—"
+      ]
+    ]
+  },
+  {
+    "id": "list",
+    "title": "List 列表",
+    "icon": "☰",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "List",
+    "description": "通用列表容器：头尾、分割线、尺寸、加载骨架、分页、栅格布局与空状态。",
+    "examples": [
+      {
+        "title": "分页列表、栅格与空状态",
+        "example": "Example080"
+      }
+    ],
+    "rows": [
+      ["dataSource", "T[]", "required"],
+      ["renderItem", "(item, index) => VNodeChild", "required"],
+      ["rowKey", "keyof T | (item, index) => Key", "index"],
+      ["header / footer", "VNodeChild / slot", "—"],
+      ["bordered / split", "boolean", "false / true"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["loading / loadingRows", "boolean / number", "false / 3"],
+      ["emptyText", "VNodeChild / slot", "'暂无数据'"],
+      ["grid", "{ column?, gutter?, xs?, sm?, md?, lg? }", "—"],
+      [
+        "pagination",
+        "boolean | { pageSize?, current?, onChange?, position?, align? }",
+        "false"
+      ],
+      ["height / onEndReached", "number / () => void", "—"],
+      ["ListItem.actions / extra", "VNodeChild[] / VNodeChild", "—"],
+      ["ListItemMeta.avatar / title / description", "VNodeChild / slot", "—"]
+    ]
+  },
+  {
+    "id": "listy",
+    "title": "Listy 虚拟列表",
+    "icon": "≡",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Listy",
+    "description": "只渲染可视区域的长列表，支持固定 / 动态行高、滚动到指定行、触底加载与页脚。",
+    "examples": [
+      {
+        "title": "一万行数据的虚拟滚动",
+        "example": "Example081"
+      }
+    ],
+    "rows": [
+      ["items", "T[]", "required"],
+      ["renderItem", "(item, index) => VNodeChild", "required"],
+      ["itemKey", "(item, index) => Key", "index"],
+      ["height", "number", "320"],
+      ["itemHeight", "number", "44"],
+      ["dynamicHeight", "boolean", "false"],
+      ["overscan", "number", "4"],
+      ["onEndReached / endReachedThreshold", "() => void / number", "— / 120"],
+      ["onVisibleRangeChange", "({ start, end }) => void", "—"],
+      ["emptyText / footer", "VNodeChild / slot", "—"],
+      ["split", "boolean", "true"],
+      ["ref", "{ scrollTo(index, align), scrollToTop() }", "—"]
+    ]
+  },
+  {
+    "id": "masonry",
+    "title": "Masonry 瀑布流",
+    "icon": "▤",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "Masonry",
+    "description": "基于测量的真正瀑布流：按最短列放置，响应式列数，增删卡片时平滑重排。",
+    "examples": [
+      {
+        "title": "响应式列数与动态增删",
+        "example": "Example082"
+      }
+    ],
+    "rows": [
+      [
+        "children / dataSource + renderItem",
+        "VNodeChild / T[] + (item, index) => VNodeChild",
+        "—"
+      ],
+      ["itemKey", "(item, index) => Key", "index"],
+      ["columns", "number | Record<minWidth, number>", "3"],
+      ["gap", "number | [column, row]", "16"],
+      ["sequential", "boolean", "false"],
+      ["onLayout", "({ columns, height }) => void", "—"]
+    ]
+  },
+  {
+    "id": "qrcode",
+    "title": "QRCode 二维码",
+    "icon": "▣",
+    "group": "数据展示",
+    "eyebrow": "DATA DISPLAY",
+    "badge": "QRCode",
+    "description": "内置零依赖的 QR 编码器（Byte 模式，1–40 版本，L/M/Q/H 纠错），支持 SVG / Canvas 渲染、中心 Logo 与状态遮罩。",
+    "examples": [
+      {
+        "title": "渲染方式、Logo 与状态",
+        "description": "修改输入框内容会即时重新编码，可直接用手机扫描验证。",
+        "example": "Example083"
+      }
+    ],
+    "rows": [
+      ["value", "string", "required"],
+      ["size", "number", "160"],
+      ["type", "'svg' | 'canvas'", "'svg'"],
+      ["errorLevel", "'L' | 'M' | 'Q' | 'H'", "'M'（有 icon 时 'H'）"],
+      ["color / bgColor", "string", "'#222438' / '#ffffff'"],
+      ["icon / iconSize", "string / number", "— / size × 0.22"],
+      ["bordered", "boolean", "true"],
+      ["margin", "number（模块数）", "2"],
+      ["status", "'active' | 'expired' | 'loading' | 'scanned'", "'active'"],
+      ["onRefresh", "() => void", "—"],
+      ["statusRender", "(status, { onRefresh }) => VNodeChild", "—"],
+      ["encodeQR (独立导出)", "(text, level?) => { size, version, modules }", "—"]
+    ]
+  },
+  {
+    "id": "watermark",
+    "title": "Watermark 水印",
+    "icon": "▧",
+    "group": "反馈组件",
+    "eyebrow": "FEEDBACK",
+    "badge": "Watermark",
+    "description": "基于 canvas 的文字 / 图片平铺水印，支持多行、旋转、间距、字体配置、全屏模式与防篡改。",
+    "examples": [
+      {
+        "title": "多行文字水印与防篡改",
+        "example": "Example084"
+      }
+    ],
+    "rows": [
+      ["content", "string | string[]", "—"],
+      ["image", "string", "—"],
+      ["width / height", "number", "按内容测量"],
+      ["rotate", "number", "-22"],
+      ["gap", "[number, number]", "[100, 100]"],
+      ["offset", "[number, number]", "gap / 2"],
+      [
+        "font",
+        "{ color?, fontSize?, fontWeight?, fontFamily?, fontStyle?, textAlign? }",
+        "rgba(0,0,0,.12) / 16px"
+      ],
+      ["zIndex", "number", "9"],
+      ["fullscreen", "boolean", "false"]
+    ]
+  },
+  {
+    "id": "splitter",
+    "title": "Splitter 分隔面板",
+    "icon": "◫",
+    "group": "布局组件",
+    "eyebrow": "LAYOUT",
+    "badge": "Splitter",
+    "description": "可拖拽调整的多面板布局，支持水平 / 垂直、最小最大尺寸、折叠、禁止调整与延迟应用。",
+    "examples": [
+      {
+        "title": "水平三栏与垂直两栏",
+        "example": "Example085"
+      }
+    ],
+    "rows": [
+      ["layout", "'horizontal' | 'vertical'", "'horizontal'"],
+      ["lazy", "boolean", "false"],
+      ["onResizeStart / onResize / onResizeEnd", "(sizes: number[]) => void", "—"],
+      ["Panel.size / defaultSize", "number | string（px 或 %）", "平均分配"],
+      ["Panel.min / max", "number | string", "—"],
+      ["Panel.resizable", "boolean", "true"],
+      ["Panel.collapsible", "boolean | { start?, end? }", "false"]
+    ]
+  },
+  {
+    "id": "select",
+    "title": "Select 选择器",
+    "icon": "⌄",
+    "group": "数据录入",
+    "badge": "Select",
+    "description": "自绘的下拉选择器，支持搜索、多选、分组、自定义选项与弹层内容。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "受控与非受控、清除与禁用。",
+        "example": "Example086"
+      },
+      {
+        "title": "多选与标签折叠",
+        "description": "多选以标签呈现，可配合搜索与 maxTagCount。",
+        "example": "Example087"
+      },
+      {
+        "title": "分组、自定义选项与弹层",
+        "description": "通过 #option 插槽与 popupRender 定制下拉内容。",
+        "example": "Example088"
+      }
+    ],
+    "rows": [
+      ["options", "Array<SelectOption | SelectOptionGroup>", "required"],
+      ["value / defaultValue", "string | string[]", "—"],
+      ["onChange", "(value, option) => void", "—"],
+      ["multiple / searchable", "boolean", "false"],
+      ["allowClear", "boolean", "false"],
+      ["maxTagCount", "number", "—"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["status", "'error' | 'warning'", "—"],
+      ["label / hint / error", "string", "—"],
+      ["placeholder", "string", "'请选择…'"],
+      ["notFoundContent", "VNodeChild / slot", "'暂无匹配选项'"],
+      ["open / onOpenChange", "boolean / (open) => void", "—"],
+      ["placement", "PopupPlacement", "'bottom-start'"],
+      ["popupClassName / popupStyle", "string / CSSProperties", "—"],
+      ["popupMatchSelectWidth", "boolean", "true"],
+      ["popupRender", "(menu) => VNodeChild", "—"],
+      ["optionRender", "(option, { active, selected, query }) => VNodeChild", "—"],
+      ["labelRender", "(option) => VNodeChild", "—"]
+    ]
+  },
+  {
+    "id": "autoComplete",
+    "title": "AutoComplete 自动完成",
+    "icon": "⌕",
+    "group": "数据录入",
+    "badge": "AutoComplete",
+    "description": "输入时提供匹配建议，弹层完全自绘，可自由定制风格与内容。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "本地过滤、关键字高亮与键盘导航。",
+        "example": "Example089"
+      },
+      {
+        "title": "自定义弹层风格",
+        "description": "popupClassName、popupStyle、optionRender 与 popupRender 组合出完全不同的视觉。",
+        "example": "Example090"
+      }
+    ],
+    "rows": [
+      ["options", "Array<string | AutoCompleteOption>", "required"],
+      ["value / defaultValue", "string", "— / ''"],
+      ["onChange", "(value: string) => void", "—"],
+      ["onSelect", "(value, option) => void", "—"],
+      ["onSearch", "(query) => void", "—"],
+      ["filterOption", "boolean | (query, option) => boolean", "true"],
+      ["highlight", "boolean", "true"],
+      ["allowClear", "boolean", "false"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["status", "'error' | 'warning'", "—"],
+      ["label / hint / error", "string", "—"],
+      ["prefix / suffix", "VNodeChild / slot", "—"],
+      ["notFoundContent", "VNodeChild / slot", "null"],
+      ["open / defaultOpen / onOpenChange", "boolean / boolean / (open) => void", "—"],
+      ["placement", "PopupPlacement", "'bottom-start'"],
+      ["popupClassName / popupStyle", "string / CSSProperties", "—"],
+      ["popupMatchSelectWidth", "boolean", "true"],
+      ["popupRender", "(menu) => VNodeChild", "—"],
+      ["optionRender", "(option, { active, query }) => VNodeChild", "—"]
+    ]
+  },
+  {
+    "id": "inputNumber",
+    "title": "InputNumber 数字输入框",
+    "icon": "#",
+    "group": "数据录入",
+    "badge": "InputNumber",
+    "description": "按范围、步长与精度录入数值，支持长按步进、键盘调节与格式化显示。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "受控数值、精度、前缀、格式化与禁用。",
+        "example": "Example091"
+      }
+    ],
+    "rows": [
+      ["value / defaultValue", "number | null", "— / null"],
+      ["onChange", "(value: number | null) => void", "—"],
+      ["min / max", "number", "-∞ / ∞"],
+      ["step", "number", "1"],
+      ["precision", "number", "由 step 推断"],
+      ["controls", "boolean | 'stacked' | 'inline'", "'stacked'"],
+      ["keyboard", "boolean", "true"],
+      ["formatter / parser", "(value) => string / (text) => number | null", "—"],
+      ["prefix / suffix", "VNodeChild / slot", "—"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["status", "'error' | 'warning'", "—"],
+      ["label / hint / error", "string", "—"],
+      ["disabled / readOnly", "boolean", "false"]
+    ]
+  },
+  {
+    "id": "rate",
+    "title": "Rate 评分",
+    "icon": "★",
+    "group": "数据录入",
+    "badge": "Rate",
+    "description": "以星级收集评分，支持半星、文案提示、自定义字符与键盘操作。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "受控评分、半星、只读与自定义字符。",
+        "example": "Example092"
+      }
+    ],
+    "rows": [
+      ["value / defaultValue", "number", "— / 0"],
+      ["onChange", "(value: number) => void", "—"],
+      ["onHoverChange", "(value: number | null) => void", "—"],
+      ["count", "number", "5"],
+      ["allowHalf", "boolean", "false"],
+      ["allowClear", "boolean", "true"],
+      ["disabled", "boolean", "false"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["character", "VNodeChild | (index) => VNodeChild", "★"],
+      ["tooltips", "string[]", "—"],
+      ["label", "string", "'评分'"]
+    ]
+  },
+  {
+    "id": "slider",
+    "title": "Slider 滑动输入条",
+    "icon": "━",
+    "group": "数据录入",
+    "badge": "Slider",
+    "description": "在数值区间内拖动取值，支持双滑块范围、刻度标记、提示气泡与键盘微调。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "单值、范围、刻度吸附与禁用。",
+        "example": "Example093"
+      }
+    ],
+    "rows": [
+      ["value / defaultValue", "number | [number, number]", "— / min"],
+      ["onChange", "(value) => void", "—"],
+      ["onChangeComplete", "(value) => void", "—"],
+      ["min / max", "number", "0 / 100"],
+      ["step", "number | null", "1"],
+      ["range", "boolean", "false"],
+      ["marks", "Record<number, VNodeChild | { label, style }>", "—"],
+      ["tooltip", "'auto' | 'always' | 'none'", "'auto'"],
+      ["tooltipFormatter", "(value) => VNodeChild", "—"],
+      ["vertical", "boolean", "false"],
+      ["showValue", "boolean", "false"],
+      ["included", "boolean", "true"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["disabled", "boolean", "false"]
+    ]
+  },
+  {
+    "id": "segmented",
+    "title": "Segmented 分段控制器",
+    "icon": "◧",
+    "group": "数据录入",
+    "badge": "Segmented",
+    "description": "在少量互斥选项间切换，带平滑滑动的指示块与方向键导航。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "受控切换、图标、尺寸、圆角与通栏布局。",
+        "example": "Example094"
+      }
+    ],
+    "rows": [
+      ["options", "Array<string | { label, value, icon?, disabled? }>", "required"],
+      ["value / defaultValue", "string", "— / 首个可用项"],
+      ["onChange", "(value) => void", "—"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["block", "boolean", "false"],
+      ["vertical", "boolean", "false"],
+      ["shape", "'default' | 'round'", "'default'"],
+      ["disabled", "boolean", "false"],
+      ["label", "string", "'视图切换'"]
+    ]
+  },
+  {
+    "id": "timePicker",
+    "title": "TimePicker 时间选择",
+    "icon": "◷",
+    "group": "数据录入",
+    "badge": "TimePicker",
+    "description": "通过时 / 分 / 秒滚动列选择时间，支持步长、禁用区间与“此刻”快捷操作。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "受控值、秒级精度、分钟步长与范围限制。",
+        "example": "Example095"
+      }
+    ],
+    "rows": [
+      ["value / defaultValue", "string | null", "— / null"],
+      ["onChange", "(value: string | null, parts) => void", "—"],
+      ["format", "'HH:mm' | 'HH:mm:ss'", "'HH:mm'"],
+      ["hourStep / minuteStep / secondStep", "number", "1"],
+      ["minTime / maxTime", "string ('HH:mm')", "—"],
+      ["disabledHours / disabledMinutes / disabledSeconds", "() => number[] 等", "—"],
+      ["showNow", "boolean", "true"],
+      ["allowClear", "boolean", "true"],
+      ["placeholder", "string", "'选择时间'"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["status", "'error' | 'warning'", "—"],
+      ["label / hint / error", "string", "—"],
+      ["open / onOpenChange", "boolean / (open) => void", "—"],
+      ["popupClassName / popupStyle", "string / CSSProperties", "—"]
+    ]
+  },
+  {
+    "id": "colorPicker",
+    "title": "ColorPicker 颜色选择器",
+    "icon": "◉",
+    "group": "数据录入",
+    "badge": "ColorPicker",
+    "description": "自绘的 HSV 取色面板，支持透明度、多种格式、预设色板与手动输入。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "受控颜色、透明度通道、不同输出格式与仅色块模式。",
+        "example": "Example096"
+      }
+    ],
+    "rows": [
+      ["value / defaultValue", "string", "— / '#685cf6'"],
+      ["onChange", "(hex, color: ColorValue) => void", "—"],
+      ["onChangeComplete", "(hex, color) => void", "—"],
+      ["format", "'hex' | 'rgb' | 'hsl'", "'hex'"],
+      ["showAlpha", "boolean", "false"],
+      ["showText", "boolean", "true"],
+      ["presets", "string[] | Array<{ label, colors }>", "—"],
+      ["allowClear", "boolean", "false"],
+      ["disabled", "boolean", "false"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["label / hint / error", "string", "—"],
+      ["open / onOpenChange", "boolean / (open) => void", "—"],
+      ["popupClassName / popupStyle", "string / CSSProperties", "—"]
+    ]
+  },
+  {
+    "id": "mentions",
+    "title": "Mentions 提及",
+    "icon": "@",
+    "group": "数据录入",
+    "badge": "Mentions",
+    "description": "在多行文本中输入触发符后弹出候选成员，弹层跟随光标位置。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "自动高度、多触发符与自定义过滤。",
+        "example": "Example097"
+      }
+    ],
+    "rows": [
+      ["options", "Array<string | MentionOption>", "required"],
+      ["value / defaultValue", "string", "— / ''"],
+      ["onChange", "(value: string) => void", "—"],
+      ["onSelect", "(option, prefix) => void", "—"],
+      ["onSearch", "(query, prefix) => void", "—"],
+      ["prefix", "string | string[]", "'@'"],
+      ["split", "string", "' '"],
+      ["filterOption", "boolean | (query, option) => boolean", "true"],
+      ["autoSize", "boolean | { minRows, maxRows }", "false"],
+      ["rows", "number", "3"],
+      ["notFoundContent", "VNodeChild / slot", "'没有匹配的成员'"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["status", "'error' | 'warning'", "—"],
+      ["label / hint / error", "string", "—"],
+      ["popupClassName / popupStyle", "string / CSSProperties", "—"],
+      ["optionRender", "(option, { active, query }) => VNodeChild", "—"]
+    ]
+  },
+  {
+    "id": "cascader",
+    "title": "Cascader 级联选择",
+    "icon": "⋯",
+    "group": "数据录入",
+    "badge": "Cascader",
+    "description": "多列级联面板按层级选择路径，支持悬停展开、任意层级选择与路径搜索。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "受控路径、悬停展开 + 搜索、任意层级选择与禁用。",
+        "example": "Example098"
+      }
+    ],
+    "rows": [
+      ["options", "CascaderOption[]", "required"],
+      ["value / defaultValue", "string[]", "— / []"],
+      ["onChange", "(path, selectedOptions) => void", "—"],
+      ["expandTrigger", "'click' | 'hover'", "'click'"],
+      ["changeOnSelect", "boolean", "false"],
+      ["showSearch", "boolean", "false"],
+      ["displayRender", "(labels, selectedOptions) => VNodeChild", "labels.join(' / ')"],
+      ["allowClear", "boolean", "true"],
+      ["notFoundContent", "VNodeChild / slot", "'暂无匹配选项'"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["status", "'error' | 'warning'", "—"],
+      ["label / hint / error", "string", "—"],
+      ["disabled", "boolean", "false"],
+      ["open / onOpenChange", "boolean / (open) => void", "—"],
+      ["popupClassName / popupStyle", "string / CSSProperties", "—"]
+    ]
+  },
+  {
+    "id": "treeSelect",
+    "title": "TreeSelect 树选择",
+    "icon": "⌥",
+    "group": "数据录入",
+    "badge": "TreeSelect",
+    "description": "以树形面板从层级数据中选择，支持搜索、单选 / 多选与级联勾选。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "单选搜索、可勾选多选、默认展开与禁用。",
+        "example": "Example099"
+      }
+    ],
+    "rows": [
+      ["treeData", "TreeSelectNode[]", "required"],
+      ["value / defaultValue", "string | string[]", "—"],
+      ["onChange", "(value, nodes) => void", "—"],
+      ["multiple", "boolean", "false"],
+      ["treeCheckable", "boolean", "false"],
+      ["showSearch", "boolean", "false"],
+      ["treeDefaultExpandAll", "boolean", "false"],
+      ["treeDefaultExpandedKeys", "string[]", "—"],
+      ["maxTagCount", "number", "—"],
+      ["allowClear", "boolean", "true"],
+      ["notFoundContent", "VNodeChild / slot", "'暂无匹配选项'"],
+      ["size", "'sm' | 'md' | 'lg'", "'md'"],
+      ["status", "'error' | 'warning'", "—"],
+      ["label / hint / error", "string", "—"],
+      ["disabled", "boolean", "false"],
+      ["popupClassName / popupStyle", "string / CSSProperties", "—"],
+      ["popupMatchSelectWidth", "boolean", "true"]
+    ]
+  },
+  {
+    "id": "transfer",
+    "title": "Transfer 穿梭框",
+    "icon": "⇄",
+    "group": "数据录入",
+    "badge": "Transfer",
+    "description": "在两个列表间批量移动条目，支持全选、搜索、单向模式与自定义渲染。",
+    "examples": [
+      {
+        "title": "基础用法",
+        "description": "受控目标列表、搜索、单向移除与自定义条目 / 页脚。",
+        "example": "Example100"
+      }
+    ],
+    "rows": [
+      ["dataSource", "TransferItem[]", "required"],
+      ["targetKeys / defaultTargetKeys", "string[]", "— / []"],
+      ["onChange", "(targetKeys, direction, moveKeys) => void", "—"],
+      ["selectedKeys / onSelectChange", "string[] / (source, target) => void", "—"],
+      ["titles", "[VNodeChild, VNodeChild]", "['可选项目', '已选项目']"],
+      ["operations", "[string, string]", "['移至已选', '移回可选']"],
+      ["showSearch", "boolean", "false"],
+      ["filterOption", "(query, item) => boolean", "按标题包含"],
+      ["render", "(item) => VNodeChild", "item.title"],
+      ["footer", "(direction, { total, selected }) => VNodeChild", "—"],
+      ["showSelectAll", "boolean", "true"],
+      ["oneWay", "boolean", "false"],
+      ["disabled", "boolean", "false"],
+      ["listStyle", "CSSProperties", "—"],
+      ["notFoundContent", "VNodeChild / slot", "'暂无数据'"]
+    ]
+  },
+  {
+    "id": "dropdown",
+    "title": "Dropdown 下拉菜单",
+    "icon": "⌄",
+    "group": "导航组件",
+    "eyebrow": "NAVIGATION",
+    "badge": "Dropdown",
+    "description": "在触发器旁展示一组操作，支持图标、快捷键提示、分组、分割线、危险项与键盘导航。",
+    "examples": [
+      {
+        "title": "触发方式与菜单结构",
+        "description": "点击、悬停与右键三种触发；菜单项支持 icon / extra / group / divider / danger / disabled。",
+        "example": "Example101"
+      }
+    ],
+    "rows": [
+      ["items", "DropdownItem[]", "required"],
+      ["onSelect", "(key, item) => void", "—"],
+      ["trigger", "'click' | 'hover' | 'contextMenu' | 数组", "'click'"],
+      ["placement", "PopupPlacement", "'bottom-start'"],
+      ["open / defaultOpen / onOpenChange", "boolean / boolean / (open) => void", "—"],
+      ["showArrow", "boolean", "false"],
+      ["matchTriggerWidth", "boolean", "false"],
+      ["disabled", "boolean", "false"],
+      ["overlayClassName / overlayStyle", "string / CSSProperties", "—"],
+      ["menuClassName", "string", "—"],
+      [
+        "DropdownItem",
+        "{ key, label, icon?, extra?, disabled?, danger?, type?, children?, onClick? }",
+        "—"
+      ]
+    ]
+  },
+  {
+    "id": "menu",
+    "title": "Menu 导航菜单",
+    "icon": "☰",
+    "group": "导航组件",
+    "eyebrow": "NAVIGATION",
+    "badge": "Menu",
+    "description": "支持内嵌展开、水平与垂直弹出三种模式，可折叠为图标栏，提供深色主题与完整键盘导航。",
+    "examples": [
+      {
+        "title": "内嵌模式与折叠",
+        "description": "子菜单以动画展开；折叠后仅显示图标，子菜单改为悬浮弹出。",
+        "example": "Example102"
+      },
+      {
+        "title": "水平、垂直弹出与深色主题",
+        "description": "horizontal 适合顶栏；vertical 的子菜单向右弹出；theme=\"dark\" 适配深色侧栏。",
+        "example": "Example103"
+      }
+    ],
+    "rows": [
+      ["items", "MenuItem[]", "required"],
+      ["mode", "'inline' | 'vertical' | 'horizontal'", "'inline'"],
+      ["selectedKey / defaultSelectedKey", "string", "—"],
+      ["onSelect", "(key, item) => void", "—"],
+      ["openKeys / defaultOpenKeys", "string[]", "— / []"],
+      ["onOpenChange", "(openKeys) => void", "—"],
+      ["collapsed", "boolean", "false"],
+      ["theme", "'light' | 'dark'", "'light'"],
+      ["inlineIndent", "number", "20"],
+      ["selectable", "boolean", "true"],
+      ["label", "string", "'菜单'"],
+      [
+        "MenuItem",
+        "{ key, label, icon?, disabled?, danger?, type?, children?, href?, onClick? }",
+        "—"
+      ]
+    ]
+  },
+  {
+    "id": "anchor",
+    "title": "Anchor 锚点",
+    "icon": "⚓",
+    "group": "导航组件",
+    "eyebrow": "NAVIGATION",
+    "badge": "Anchor",
+    "description": "页内导航：滚动时自动高亮当前区块，点击平滑定位，支持嵌套层级与水平布局。",
+    "examples": [
+      {
+        "title": "滚动监听",
+        "description": "通过 getContainer 指定滚动容器；滚动时墨条跟随高亮项移动。",
+        "example": "Example104"
+      },
+      {
+        "title": "水平方向",
+        "description": "direction=\"horizontal\" 适合放在内容区顶部作为小节导航。",
+        "example": "Example105"
+      }
+    ],
+    "rows": [
+      ["items", "AnchorItem[]", "required"],
+      ["offsetTop", "number", "0"],
+      ["bounds", "number", "5"],
+      ["targetOffset", "number", "offsetTop"],
+      ["direction", "'vertical' | 'horizontal'", "'vertical'"],
+      ["affix", "boolean", "true"],
+      ["getContainer", "() => HTMLElement | Window", "window"],
+      ["replace", "boolean", "false"],
+      ["onChange", "(activeHref) => void", "—"],
+      ["onClick", "(event, item) => void", "—"],
+      ["AnchorItem", "{ key?, href, title, children? }", "—"]
+    ]
+  },
+  {
+    "id": "affix",
+    "title": "Affix 固钉",
+    "icon": "⌖",
+    "group": "布局组件",
+    "eyebrow": "LAYOUT",
+    "badge": "Affix",
+    "description": "当元素滚动到指定位置时将其固定，并以占位元素保持原有布局，支持自定义滚动容器。",
+    "examples": [
+      {
+        "title": "在滚动容器中固定",
+        "description": "target 指定滚动容器，onChange 返回固定状态。",
+        "example": "Example106"
+      }
+    ],
+    "rows": [
+      ["offsetTop", "number", "0"],
+      ["offsetBottom", "number", "—"],
+      ["target", "() => HTMLElement | Window", "window"],
+      ["onChange", "(affixed: boolean) => void", "—"],
+      ["#default", "VNodeChild / slot", "required"]
+    ]
+  },
+  {
+    "id": "tour",
+    "title": "Tour 漫游式引导",
+    "icon": "✧",
+    "group": "反馈组件",
+    "eyebrow": "FEEDBACK",
+    "badge": "Tour",
+    "description": "聚光遮罩高亮目标元素，卡片自动定位并带箭头，支持步骤指示、键盘切换与主色风格。",
+    "examples": [
+      {
+        "title": "分步引导",
+        "description": "第一步无目标时居中展示；后续步骤跟随目标元素并平滑过渡。",
+        "example": "Example107"
+      }
+    ],
+    "rows": [
+      ["steps", "TourStep[]", "required"],
+      ["open", "boolean", "false"],
+      ["onClose", "(current) => void", "—"],
+      ["onFinish", "() => void", "—"],
+      ["current / defaultCurrent", "number", "— / 0"],
+      ["onChange", "(current) => void", "—"],
+      ["mask", "boolean", "true"],
+      ["type", "'default' | 'primary'", "'default'"],
+      ["arrow", "boolean", "true"],
+      ["gap / radius", "number", "6 / 10"],
+      ["closable", "boolean", "true"],
+      ["indicatorsRender", "(current, total) => VNodeChild", "圆点"],
+      ["zIndex", "number", "1200"],
+      [
+        "scrollIntoViewOptions",
+        "boolean | ScrollIntoViewOptions",
+        "{ block: 'center', behavior: 'smooth' }"
+      ],
+      [
+        "TourStep",
+        "{ title, description?, cover?, target?, placement?, mask?, nextButtonProps?, prevButtonProps? }",
+        "—"
+      ]
+    ]
+  },
+  {
+    "id": "floatButton",
+    "title": "FloatButton 悬浮按钮",
+    "icon": "↗",
+    "group": "基础组件",
+    "eyebrow": "GENERAL",
+    "badge": "FloatButton",
+    "description": "固定在视口角落的快捷操作，支持主色与方形样式、徽标、分组展开菜单以及回到顶部。",
+    "examples": [
+      {
+        "title": "形态、分组与回到顶部",
+        "description": "示例以 inline 方式内嵌展示；页面滚动超过 200px 后右下角会出现 BackTop。",
+        "example": "Example108"
+      }
+    ],
+    "rows": [
+      ["icon", "VNodeChild / slot", "↑"],
+      ["description", "VNodeChild / slot", "—"],
+      ["shape", "'circle' | 'square'", "'circle'"],
+      ["type", "'default' | 'primary'", "'default'"],
+      ["tooltip", "string", "—"],
+      ["href / target", "string", "—"],
+      ["badge", "{ count?, dot?, overflowCount? }", "—"],
+      ["inline", "boolean", "false"],
+      ["FloatButtonGroup.trigger", "'click' | 'hover'", "—"],
+      ["FloatButtonGroup.open / onOpenChange", "boolean / (open) => void", "—"],
+      ["FloatButtonGroup.placement", "'top' | 'bottom' | 'left' | 'right'", "'top'"],
+      ["BackTop.visibilityHeight", "number", "400"],
+      ["BackTop.target", "() => HTMLElement | Window", "window"],
+      ["BackTop.duration", "number", "450"]
+    ]
+  },
+  {
+    "id": "popover",
+    "title": "Popover 气泡卡片",
+    "icon": "▱",
+    "group": "反馈组件",
+    "eyebrow": "FEEDBACK",
+    "badge": "Popover",
+    "description": "在触发元素附近展示带标题的浮层，支持点击 / 悬停 / 聚焦触发、八种位置、箭头与受控模式。",
+    "examples": [
+      {
+        "title": "触发方式与位置",
+        "example": "Example109"
+      }
+    ],
+    "rows": [
+      ["content", "VNodeChild / slot", "required"],
+      ["title", "VNodeChild / slot", "—"],
+      ["trigger", "'click' | 'hover' | 'focus' | 'contextMenu' | 数组", "'click'"],
+      ["placement", "PopupPlacement", "'bottom'"],
+      ["arrow", "boolean", "true"],
+      ["open / defaultOpen / onOpenChange", "boolean / boolean / (open) => void", "—"],
+      ["mouseEnterDelay / mouseLeaveDelay", "number (ms)", "80 / 120"],
+      ["disabled", "boolean", "false"],
+      ["overlayClassName / overlayStyle", "string / CSSProperties", "—"],
+      ["#default", "VNodeChild / slot", "required"]
+    ]
+  },
+  {
+    "id": "popconfirm",
+    "title": "Popconfirm 气泡确认框",
+    "icon": "✓",
+    "group": "反馈组件",
+    "eyebrow": "FEEDBACK",
+    "badge": "Popconfirm",
+    "description": "就地请求确认，支持异步确认（自动 loading）、失败提示、危险操作样式与自定义文案。",
+    "examples": [
+      {
+        "title": "基础、异步与失败处理",
+        "example": "Example110"
+      }
+    ],
+    "rows": [
+      ["title", "VNodeChild / slot", "required"],
+      ["description", "VNodeChild / slot", "—"],
+      ["icon", "VNodeChild / slot", "警示图标"],
+      ["onConfirm", "(event) => void | Promise<void>", "—"],
+      ["onCancel", "(event) => void", "—"],
+      ["okText / cancelText", "VNodeChild / slot", "'确定' / '取消'"],
+      ["okType", "'primary' | 'danger'", "'primary'"],
+      ["showCancel", "boolean", "true"],
+      ["errorText", "VNodeChild / slot", "'操作失败，请重试。'"],
+      ["placement", "PopupPlacement", "'top'"],
+      ["open / defaultOpen / onOpenChange", "boolean / boolean / (open) => void", "—"],
+      ["disabled", "boolean", "false"],
+      ["overlayClassName / overlayStyle", "string / CSSProperties", "—"]
+    ]
+  }
+]

@@ -56,4 +56,4 @@ React 的 `value/checked` 对应 Vue 的 `modelValue` 和 `v-model`；弹层使�
 
 另外提供 `zodResolver`、`yupResolver` 与底层 `encodeQR` 工具导出。设计令牌位于 `design-tokens.json`，运行时主题为 `src/styles/theme.css`；保留源项目的 `--at-` 变量和 `at-` 类名。
 
-迁移清单见 [MIGRATION.md](./MIGRATION.md)。维护时可设置 `ATELIER_REACT_SOURCE` 指向原 React 仓库，然后运行 `python3 scripts/sync-entries.py` 同步入口清单，或运行 `node scripts/port-demo.mjs` 更新示例转换；生成后仍须检查类型、构建和浏览器行为。
+迁移清单见 [MIGRATION.md](./MIGRATION.md)。示例位于 `demo/examples/*.vue`，全部使用 Vue 3 `<script setup>` 与 `<template>`。文档站直接渲染示例文件，并通过 `?raw` 展示同一份源码；页面说明与 API 位于 `demo/pages.json`。新增示例时在 `demo/examples.ts` 注册组件与源码。`npm run check:examples` 检查全部 SFC 编译，`npm run typecheck` 检查示例类型。

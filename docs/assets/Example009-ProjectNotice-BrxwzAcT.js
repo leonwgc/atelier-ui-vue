@@ -1,0 +1,1 @@
+import{n as e}from"./feedback-6iWOD3da.js";import{G as t,O as n,R as r,f as i,g as a,n as o,v as s}from"./index-D7DP4mAo.js";var c=s({__name:`Example009-ProjectNotice`,setup(s){let c=()=>e.success({title:`成员已加入`,description:`林知夏已加入 Aurora workspace。`});return(e,s)=>(n(),i(t(o),{onClick:c},{default:r(()=>[...s[0]||=[a(`查看通知`,-1)]]),_:1}))}});export{c as default};

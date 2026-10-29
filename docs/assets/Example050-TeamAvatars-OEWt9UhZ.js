@@ -1,0 +1,1 @@
+import{t as e}from"./Avatar-DnGqIOSy.js";import{G as t,O as n,_ as r,m as i,v as a}from"./index-D7DP4mAo.js";var o=a({__name:`Example050-TeamAvatars`,setup(a){return(a,o)=>(n(),i(`div`,null,[r(t(e),{name:`林知夏`,size:`sm`}),r(t(e),{name:`陈一川`}),r(t(e),{name:`周禾`,size:`lg`})]))}});export{o as default};

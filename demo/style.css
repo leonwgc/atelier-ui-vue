@@ -272,3 +272,15 @@ button:focus-visible, a:focus-visible { outline: 3px solid rgb(104 92 246 / 22%)
 .demo-listy-row strong { font-weight: 600; }
 .demo-masonry-card { display: flex; align-items: flex-end; padding: 12px; border-radius: var(--at-radius-md); background-size: cover; background-position: center; color: #fff; font-weight: 600; text-shadow: 0 1px 4px rgb(0 0 0 / 35%); box-shadow: var(--at-shadow-sm); }
 .demo-watermark-body { display: grid; gap: 12px; min-height: 220px; padding: 20px; border: 1px solid var(--at-color-border); border-radius: var(--at-radius-md); background: var(--at-color-surface); }
+
+.code-panel {
+  max-height: 640px;
+  font-size: 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  tab-size: 2;
+}
+.code-panel:focus-visible {
+  outline: 2px solid var(--at-color-primary);
+  outline-offset: -2px;
+}

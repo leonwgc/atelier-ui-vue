@@ -1,0 +1,1 @@
+import{t as e}from"./Skeleton-CX-gbij9.js";import{G as t,O as n,f as r,v as i}from"./index-D7DP4mAo.js";var a=i({__name:`Example062-CompactPlaceholder`,setup(i){return(i,a)=>(n(),r(t(e),{title:!1,paragraph:{rows:2}}))}});export{a as default};
