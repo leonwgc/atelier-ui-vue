@@ -10,3 +10,4 @@
 .at-input:focus-visible { outline: 0; }
 .at-input-wrap__adornment { display: inline-flex; flex: 0 0 auto; align-items: center; color: var(--at-color-muted); font-size: 15px; }
 .at-input-wrap__clear { border: 0; background: transparent; color: #9ba0b0; font-size: 22px; line-height: 1; }
+.at-input-wrap--warning { border-color: var(--at-color-warning); }

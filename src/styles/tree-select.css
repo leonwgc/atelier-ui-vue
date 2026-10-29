@@ -1,5 +1,6 @@
 .at-tree-select { width: 100%; }
 .at-tree-select__popup { padding: 6px; }
+.at-tree-select__empty { display: block; padding: 18px 12px; color: var(--at-color-muted); font-size: 14px; text-align: center; }
 .at-tree-select__tree { max-height: 300px; }
 .at-tree-select__node { padding-left: calc(6px + var(--at-tree-depth, 0) * 18px); gap: 4px; }
 .at-tree-select__node--branch { color: var(--at-color-subtle); }

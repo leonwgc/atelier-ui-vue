@@ -855,7 +855,7 @@ const channels = [
     { label: '\u4F01\u4E1A\u5FAE\u4FE1', value: 'wecom' },
 ];
 ` },
-            { title: '分组、自定义选项与弹层', description: '通过 optionRender 与 popupRender 定制下拉内容。', preview: vnode(CustomSelect, {}, {}), code: `import { defineComponent, shallowRef as vueRef, computed, Fragment, createVNode, watch, onMounted } from 'vue';
+            { title: '分组、自定义选项与弹层', description: '通过 #option 插槽与 popupRender 定制下拉内容。', preview: vnode(CustomSelect, {}, {}), code: `import { defineComponent, shallowRef as vueRef, computed, Fragment, createVNode, watch, onMounted } from 'vue';
 import type { VNodeChild, Ref, VNodeTypes, CSSProperties } from 'vue';
 function refSetter<T>(state: Ref<T>) { return (next: T | ((previous: T) => T)) => { state.value = typeof next === 'function' ? (next as (previous: T) => T)(state.value) : next; }; }
 const unitless = new Set(['opacity', 'zIndex', 'fontWeight', 'lineHeight', 'flex', 'flexGrow', 'flexShrink', 'order', 'gridRow', 'gridColumn', 'WebkitLineClamp', 'strokeWidth', 'strokeDashoffset', 'scale', 'zoom']);

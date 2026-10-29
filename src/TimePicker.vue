@@ -5,7 +5,7 @@ import { useAttrs, getCurrentInstance } from 'vue';
 import { computed, ref, watch } from 'vue';
 import { useFloating, type PopupPlacement } from './internal/floating';
 import { parseTime, formatTime, type TimeFormat, type TimeParts } from './internal/time';
-import './styles/theme.css'; import './styles/field.css'; import './styles/floating.css'; import './styles/time-picker.css';
+import './styles/theme.css'; import './styles/field.css'; import './styles/selector.css'; import './styles/floating.css'; import './styles/time-picker.css';
 const attrs = useAttrs();
 const generatedFieldId = `at-field-${getCurrentInstance()?.uid}`;
 const fieldId = computed(() => typeof attrs.id === 'string' ? attrs.id : generatedFieldId);

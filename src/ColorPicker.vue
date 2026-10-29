@@ -4,7 +4,7 @@ import { useAttrs, getCurrentInstance } from 'vue';
 import { ref, computed, watch, onBeforeUnmount } from 'vue';
 import { parseColor, rgbToHsv, toHex, hsvToRgb, makeColor, formatColor, type HSVA, type ColorValue, type ColorFormat } from './internal/color';
 import { useFloating, type PopupPlacement } from './internal/floating';
-import './styles/theme.css'; import './styles/field.css'; import './styles/floating.css'; import './styles/color-picker.css';
+import './styles/theme.css'; import './styles/field.css'; import './styles/selector.css'; import './styles/floating.css'; import './styles/color-picker.css';
 const attrs = useAttrs();
 const generatedFieldId = `at-field-${getCurrentInstance()?.uid}`;
 const fieldId = computed(() => typeof attrs.id === 'string' ? attrs.id : generatedFieldId);

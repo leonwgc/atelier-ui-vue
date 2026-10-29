@@ -32,10 +32,14 @@ export function useFloating(open: () => boolean, placement: () => PopupPlacement
     measure();
     const pointer = (event: PointerEvent) => { if (!anchor.value?.contains(event.target as Node) && !panel.value?.contains(event.target as Node)) close(); };
     const key = (event: KeyboardEvent) => { if (event.key === 'Escape') { close(); anchor.value?.focus(); } };
-    const observer = typeof ResizeObserver === 'undefined' ? undefined : new ResizeObserver(measure);
+    let frame = 0;
+    const observer = typeof ResizeObserver === 'undefined' ? undefined : new ResizeObserver(() => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(measure);
+    });
     if (anchor.value) observer?.observe(anchor.value); if (panel.value) observer?.observe(panel.value);
     window.addEventListener('resize', measure); window.addEventListener('scroll', measure, true); document.addEventListener('pointerdown', pointer); document.addEventListener('keydown', key);
-    cleanup = () => { observer?.disconnect(); window.removeEventListener('resize', measure); window.removeEventListener('scroll', measure, true); document.removeEventListener('pointerdown', pointer); document.removeEventListener('keydown', key); };
+    cleanup = () => { observer?.disconnect(); cancelAnimationFrame(frame); window.removeEventListener('resize', measure); window.removeEventListener('scroll', measure, true); document.removeEventListener('pointerdown', pointer); document.removeEventListener('keydown', key); };
   }, { immediate: true, flush: 'post' });
   onBeforeUnmount(() => cleanup?.());
   return { anchor, panel, position, resolvedPlacement, id, measure };
